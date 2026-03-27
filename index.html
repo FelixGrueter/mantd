@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MANTD | Make All Nations To Disciples</title>
+  <meta name="description"
+    content="MANTD – Alle Nationen für Jesus gewinnen. Gemeinnützige Organisation mit dem Ziel, Europa mit dem Evangelium von Jesus Christus zu erreichen.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ======= NAVIGATION ======= -->
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo">
+        <img src="images/MANTD_Logo_weiss.png" alt="MANTD Logo" class="nav__logo-img">
+      </a>
+      <ul class="nav__links">
+        <li><a href="#vision" data-i18n="nav.vision">Vision</a></li>
+        <li><a href="#werke" data-i18n="nav.werke">Werke</a></li>
+        <li><a href="#team" data-i18n="nav.team">Team</a></li>
+        <li><a href="#kultur" data-i18n="nav.kultur">Kultur</a></li>
+        <li><a href="#kontakt" data-i18n="nav.kontakt">Kontakt</a></li>
+        <li><a href="#give" class="nav__cta" data-i18n="nav.give">GIVE</a></li>
+      </ul>
+
+      <!-- ── Language Switcher ── -->
+      <div class="lang-switcher" role="group" aria-label="Language switcher">
+        <button class="lang-btn active" data-lang="de" aria-pressed="true" onclick="setLanguage('de')">
+          <span class="lang-flag">🇩🇪</span><span class="lang-code">DE</span>
+        </button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false" onclick="setLanguage('en')">
+          <span class="lang-flag">🇬🇧</span><span class="lang-code">EN</span>
+        </button>
+        <button class="lang-btn" data-lang="it" aria-pressed="false" onclick="setLanguage('it')">
+          <span class="lang-flag">🇮🇹</span><span class="lang-code">IT</span>
+        </button>
+      </div>
+
+      <button class="nav__burger" id="burger" data-i18n-aria="nav.burger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#vision" onclick="closeMobile()" data-i18n="nav.vision">Vision</a>
+    <a href="#werke" onclick="closeMobile()" data-i18n="nav.werke">Werke</a>
+    <a href="#team" onclick="closeMobile()" data-i18n="nav.team">Team</a>
+    <a href="#kultur" onclick="closeMobile()" data-i18n="nav.kultur">Kultur</a>
+    <a href="#kontakt" onclick="closeMobile()" data-i18n="nav.kontakt">Kontakt</a>
+    <a href="#give" onclick="closeMobile()" data-i18n="nav.give">GIVE</a>
+
+    <!-- Mobile Language Switcher -->
+    <div class="lang-switcher lang-switcher--mobile" role="group" aria-label="Language switcher">
+      <button class="lang-btn active" data-lang="de" aria-pressed="true" onclick="setLanguage('de');closeMobile()">
+        <span class="lang-flag">🇩🇪</span><span class="lang-code">DE</span>
+      </button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false" onclick="setLanguage('en');closeMobile()">
+        <span class="lang-flag">🇬🇧</span><span class="lang-code">EN</span>
+      </button>
+      <button class="lang-btn" data-lang="it" aria-pressed="false" onclick="setLanguage('it');closeMobile()">
+        <span class="lang-flag">🇮🇹</span><span class="lang-code">IT</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ======= HERO ======= -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <img src="images/Hero_BG_MANTD.JPG" alt="MANTD – Fluid Art Background" loading="eager">
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__center-logo">
+      <img src="images/MANTD_Logo_weiss.png" alt="MANTD" class="hero__big-logo">
+    </div>
+    <div class="scroll-indicator">
+      <span data-i18n="hero.scroll">Scroll</span>
+      <div class="scroll-indicator__line"></div>
+    </div>
+  </section>
+
+  <!-- ======= HERO CONTENT SECTION ======= -->
+  <section class="hero-content-section">
+    <div class="hcs__bg">
+      <img src="images/IMG_1686.JPG" data-i18n-alt="hero.img.alt" alt="MANTD Community">
+    </div>
+    <div class="hcs__overlay"></div>
+    <div class="container hcs__content">
+      <h1 class="hero__title">
+        <span data-i18n="hero.title.line1">Alle Nationen</span><br>
+        <span class="accent" data-i18n="hero.title.accent">für Jesus</span><br>
+        <span data-i18n="hero.title.line2">gewinnen</span>
+      </h1>
+      <p class="hero__subtitle" data-i18n="hero.subtitle">Wir verfolgen das konkrete Ziel, den deutschsprachigen und
+        italienischen Raum mit dem
+        Evangelium von Jesus Christus zu erreichen.</p>
+      <div class="hero__ctas">
+        <a href="#kontakt" class="btn btn--primary" data-i18n="hero.cta.join">Schließe dich uns an</a>
+        <a href="#vision" class="btn btn--outline" data-i18n="hero.cta.more">Mehr erfahren</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= TICKER ======= -->
+  <section class="ticker">
+    <div style="overflow:hidden;">
+      <div class="ticker__track" id="ticker">
+        <div class="ticker__item ticker__item--scripture" data-i18n="ticker.text">Mt 28:19 So geht nun hin und macht zu
+          Jüngern alle Völker, und tauft sie auf den Namen des Vaters und des Sohnes und des Heiligen Geistes!</div>
+        <div class="ticker__item ticker__item--scripture" data-i18n="ticker.text">Mt 28:19 So geht nun hin und macht zu
+          Jüngern alle Völker, und tauft sie auf den Namen des Vaters und des Sohnes und des Heiligen Geistes!</div>
+        <div class="ticker__item ticker__item--scripture" data-i18n="ticker.text">Mt 28:19 So geht nun hin und macht zu
+          Jüngern alle Völker, und tauft sie auf den Namen des Vaters und des Sohnes und des Heiligen Geistes!</div>
+        <div class="ticker__item ticker__item--scripture" data-i18n="ticker.text">Mt 28:19 So geht nun hin und macht zu
+          Jüngern alle Völker, und tauft sie auf den Namen des Vaters und des Sohnes und des Heiligen Geistes!</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= VISION ======= -->
+  <section class="vision" id="vision">
+    <div class="container">
+      <div class="vision__grid">
+        <div class="vision__text reveal">
+          <div class="section-label" data-i18n="vision.label">Unsere Vision</div>
+          <h2 class="section-heading" style="margin-bottom:var(--space-8);">
+            <span data-i18n="vision.heading1">Sein globaler</span><br>
+            <span data-i18n="vision.heading2">Traum beginnt</span><br>
+            <span style="color:var(--color-accent);" data-i18n="vision.heading3">bei dir</span>
+          </h2>
+          <p data-i18n="vision.p1">Jesus hat uns in Matthäus 28:19 den Auftrag gegeben, alle Nationen zu Jüngern zu
+            machen. Wir sind eine
+            Gruppe von Menschen, die durch den Glauben an Jesus wiedergeboren und mit dem Heiligen Geist getauft wurde.
+          </p>
+          <p data-i18n="vision.p2">Wir sind davon überzeugt, dass sein Blut ausreicht, um uns zu Söhnen und Töchtern des
+            Höchsten zu machen.
+            Jetzt liegt es an uns, die Nationen mit diesem wunderbaren Evangelium der Liebe zu erschüttern.</p>
+          <div class="vision__quote" data-i18n="vision.quote">
+            „Diejenigen, die ewig nur den Willen Gottes suchen, werden von denjenigen überrannt, die den Willen Gottes
+            tun."
+            <br>- Reinhard Bonnke
+          </div>
+          <a href="#kontakt" class="btn btn--ghost"><span data-i18n="vision.cta">Werde Teil der Bewegung</span> <span
+              class="arrow">→</span></a>
+        </div>
+        <div class="vision__image reveal">
+          <img src="images/IMG_1480.JPG" data-i18n-alt="vision.img.alt" alt="Daniele Vitale – Gründer MANTD">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= COUNTER ======= -->
+  <section class="counter" id="counter">
+    <div class="container">
+      <div class="section-label" style="text-align:center;" data-i18n="counter.label">Unsere Zielregionen</div>
+      <h2 class="counter__heading reveal">
+        <span data-i18n="counter.heading1">Wir wollen diese</span><br>
+        <span data-i18n="counter.heading2">Menschen erreichen</span>
+      </h2>
+      <p class="counter__sub reveal" data-i18n="counter.sub">Der deutschsprachige und italienische Raum – Millionen von
+        Menschen, die das
+        Evangelium noch nicht gehört haben.</p>
+      <div class="counter__grid reveal">
+        <div class="counter__card">
+          <div class="counter__flag">🇩🇪</div>
+          <div class="counter__number" data-target="84000000">0</div>
+          <div class="counter__label" data-i18n="counter.germany">Deutschland</div>
+        </div>
+        <div class="counter__card">
+          <div class="counter__flag">🇮🇹</div>
+          <div class="counter__number" data-target="59000000">0</div>
+          <div class="counter__label" data-i18n="counter.italy">Italien</div>
+        </div>
+      </div>
+      <a href="#werke" class="btn btn--primary" data-i18n="counter.cta">Entdecke unsere Arbeit</a>
+    </div>
+  </section>
+
+  <!-- ======= WERKE ======= -->
+  <section class="werke" id="werke">
+    <div class="container">
+      <div class="werke__intro reveal">
+        <div class="section-label" data-i18n="werke.label">Unsere Werke</div>
+        <h2 class="section-heading" style="margin-bottom:var(--space-6);">
+          <span data-i18n="werke.heading">Was wir</span><br>
+          <span style="color:var(--color-accent);" data-i18n="werke.heading.accent">machen</span>
+        </h2>
+        <p data-i18n="werke.intro">Gemeinsam bauen wir Gemeinden, trainieren Missionare und bringen das Evangelium
+          dahin, wo es gebraucht wird.</p>
+      </div>
+
+      <div class="werke__tabs reveal">
+        <button class="werke__tab active" data-panel="newlife" data-i18n="werke.tab.newlife">New Life.</button>
+        <button class="werke__tab" data-panel="lovefire" data-i18n="werke.tab.lovefire">Love &amp; Fire</button>
+        <button class="werke__tab" data-panel="sons" data-i18n="werke.tab.sons">Sons of Zion</button>
+      </div>
+
+      <!-- New Life Panel -->
+      <div class="werke__panel active" id="panel-newlife">
+        <div class="werke__card">
+          <div class="werke__card-image">
+            <img src="images/84a2c33e-036c-4a72-a4da-9ce127a7160f.JPG" data-i18n-alt="newlife.img.alt"
+              alt="New Life. Logo">
+          </div>
+          <div>
+            <h3 class="werke__card-title">New Life.</h3>
+            <p class="werke__card-desc" data-i18n="newlife.desc">Jesus-zentriertes Hausgemeinde-Netzwerk. Wir gründen
+              und leiten Hausgemeinden,
+              bilden Pastoren aus und taufen Menschen in Wasser und Geist. Finde eine New Life. Gemeinde in deiner Nähe
+              oder werde selbst zum Gemeindegründer.</p>
+            <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;">
+              <a href="https://www.newlife-international.org" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="newlife.cta1">Gemeinde finden</a>
+              <a href="https://www.sonsofzion.org" target="_blank" rel="noopener" class="btn btn--outline" data-i18n="newlife.cta2">Pastor werden</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Love & Fire Panel -->
+      <div class="werke__panel" id="panel-lovefire">
+        <div class="werke__card">
+          <div class="werke__card-image">
+            <img src="images/loveandfiredef.PNG" data-i18n-alt="lovefire.img.alt" alt="Love &amp; Fire Logo"
+              style="object-fit:contain;background:#fff;">
+          </div>
+          <div>
+            <h3 class="werke__card-title">Love &amp; Fire</h3>
+            <p class="werke__card-desc" data-i18n="lovefire.desc">Ein 2-Tages-Seminar, bei dem wir tief in Gottes Liebe
+              eintauchen. Eine Mischung
+              aus Teachings und Straßeneinsätzen – Kranke heilen, für Menschen beten und das Evangelium predigen. Es
+              geht nicht um ein Event, sondern um einen Lebensstil.</p>
+            <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;">
+              <a href="https://www.love-and-fire.org" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="lovefire.cta1">Zum nächsten Event</a>
+              <a href="https://www.love-and-fire.org" target="_blank" rel="noopener" class="btn btn--outline" data-i18n="lovefire.cta2">Event buchen</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sons of Zion Panel -->
+      <div class="werke__panel" id="panel-sons">
+        <div class="werke__card">
+          <div class="werke__card-image">
+            <img src="images/sonsofzionneudef.JPG" data-i18n-alt="sons.img.alt" alt="Sons of Zion Logo"
+              style="object-fit:contain;background:#000;padding:10px;">
+          </div>
+          <div>
+            <h3 class="werke__card-title">Sons of Zion</h3>
+            <p class="werke__card-desc" data-i18n="sons.desc">Das Herz von Sons of Zion: Männer und Frauen in ihrer
+              Identität in Christus
+              stärken, gewurzelt und gegründet in der Liebe Gottes. Fest in der Wahrheit stehen, nicht durch Gefühle
+              geformt. Seminare lokal und online.</p>
+            <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;">
+              <a href="https://www.sonsofzion.org" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="sons.cta1">Nächstes Seminar</a>
+              <a href="https://www.sonsofzion.org" target="_blank" rel="noopener" class="btn btn--outline" data-i18n="sons.cta2">Online teilnehmen</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FEATURES GRID ======= -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-label reveal" data-i18n="features.label">Weitere Dienste</div>
+      <h2 class="section-heading reveal" style="max-width:600px;margin-bottom:0;">
+        <span data-i18n="features.heading">Liebe in</span><br>
+        <span style="color:var(--color-accent);" data-i18n="features.heading.accent">Aktion</span>
+      </h2>
+      <div class="features__grid">
+        <div class="feature-card reveal">
+          <span class="feature-card__icon">🌍</span>
+          <h3 class="feature-card__title" data-i18n="feature.missions.title">Mission Trips</h3>
+          <p class="feature-card__desc" data-i18n="feature.missions.desc">Erfahre mehr über unsere aktuellen und
+            zukünftigen Missionseinsätze. Folge uns
+            auf Instagram und YouTube, um auf dem Laufenden zu bleiben.</p>
+        </div>
+        <div class="feature-card reveal">
+          <span class="feature-card__icon">🤝</span>
+          <h3 class="feature-card__title" data-i18n="feature.poor.title">The Poor</h3>
+          <p class="feature-card__desc" data-i18n="feature.poor.desc">Armut erkennen und ihr begegnen. Liebe praktisch
+            werden lassen und die Hände und
+            Füße von Jesus werden. Nah und fern.</p>
+        </div>
+        <div class="feature-card reveal">
+          <span class="feature-card__icon">🎓</span>
+          <h3 class="feature-card__title" data-i18n="feature.training.title">Ausbildung</h3>
+          <p class="feature-card__desc" data-i18n="feature.training.desc">In enger Zusammenarbeit trainieren wir dich
+            und begleiten dich, um gemeinsam
+            herauszufinden, wo deine Reise hingeht. Hörst du seinen Ruf?</p>
+        </div>
+        <div class="feature-card reveal">
+          <span class="feature-card__icon">💬</span>
+          <h3 class="feature-card__title" data-i18n="feature.talk.title">Einzelgespräche</h3>
+          <p class="feature-card__desc" data-i18n="feature.talk.desc">Manche Dinge bespricht man gerne unter vier Augen.
+            Ob per Telefon, Video oder
+            persönlich – wir nehmen uns gerne Zeit für dich.</p>
+        </div>
+        <div class="feature-card reveal">
+          <img src="images/alpha_logo.png" data-i18n-alt="feature.alpha.img.alt" alt="Alpha Kurse Logo"
+            class="feature-card__icon feature-card__icon--img">
+          <h3 class="feature-card__title" data-i18n="feature.alpha.title">Alpha Kurse</h3>
+          <p class="feature-card__desc" data-i18n="feature.alpha.desc">Kulturgerechte Evangelisation in Europa. Der Kurs
+            schafft liebevolle
+            Rahmenbedingungen, um Menschen mit dem Evangelium zu erreichen.</p>
+          <br>
+          <a href="https://alpha.org/" target="_blank" rel="noopener" class="feature-card__link"
+            data-i18n="feature.alpha.link">Was ist Alpha? →</a>
+        </div>
+        <div class="feature-card reveal">
+          <span class="feature-card__icon">💡</span>
+          <h3 class="feature-card__title" data-i18n="feature.dream.title">Dream Center</h3>
+          <p class="feature-card__desc" data-i18n="feature.dream.desc">Wir helfen dir, das volle Potential zu entdecken,
+            das Gott in dich hineingelegt
+            hat. Was ist deine Berufung? Lass es uns gemeinsam herausfinden.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= KULTUR ======= -->
+  <section class="kultur" id="kultur">
+    <div class="container">
+      <div class="kultur__content">
+        <div class="section-label reveal" data-i18n="kultur.label">Unsere Kultur</div>
+        <h2 class="section-heading reveal" style="margin-bottom:var(--space-6);">
+          <span data-i18n="kultur.heading1">Jesu Kultur</span><br>
+          <span style="color:var(--color-accent);" data-i18n="kultur.heading2">ist unsere Kultur</span>
+        </h2>
+        <p class="reveal" style="color:var(--color-muted);font-weight:300;line-height:1.8;" data-i18n="kultur.intro">
+          Durch das Werk Jesu wurden
+          wir heilig, tadellos und unsträflich vor ihn hingestellt – und wir glauben das.</p>
+      </div>
+      <div class="kultur__list">
+        <div class="kultur__item reveal" data-i18n="kultur.item1">Wir haben eine intime Beziehung durch Jesus mit dem
+          Vater.</div>
+        <div class="kultur__item reveal" data-i18n="kultur.item2">Wir lieben unsere Brüder, Schwestern und alle
+          Menschen.</div>
+        <div class="kultur__item reveal" data-i18n="kultur.item3">Die Früchte des Geistes sind in unserem Leben
+          sichtbar.</div>
+        <div class="kultur__item reveal" data-i18n="kultur.item4">Zeichen, Wunder und Heilung ist für uns ganz normal.
+        </div>
+        <div class="kultur__item reveal" data-i18n="kultur.item5">Wir befreien Menschen und treiben Dämonen aus.</div>
+        <div class="kultur__item reveal" data-i18n="kultur.item6">Wir taufen Menschen in Wasser und Geist auf den Namen
+          Jesus.</div>
+        <div class="kultur__item reveal" data-i18n="kultur.item7">Wir haben tiefe, ehrliche Beziehungen.</div>
+        <div class="kultur__item reveal" data-i18n="kultur.item8">Wir machen einen positiven Unterschied in der
+          Gesellschaft.</div>
+        <div class="kultur__item reveal" data-i18n="kultur.item9">Wir repräsentieren Jesus in jedem Gedanken und jeder
+          Handlung.</div>
+        <div class="kultur__item reveal" data-i18n="kultur.item10">Wie im Himmel, so auf Erden – in unserem Leben und
+          unseren Familien.</div>
+      </div>
+      <div style="text-align:center;" class="reveal">
+        <a href="#kontakt" class="btn btn--primary" data-i18n="kultur.cta">Werde Teil unserer Gemeinschaft</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= TEAM ======= -->
+  <section class="team" id="team">
+    <div class="container">
+      <div class="team__grid">
+        <div class="team__image reveal">
+          <img src="images/IMG_1637.JPG" data-i18n-alt="team.img.alt" alt="Daniele Vitale">
+        </div>
+        <div class="reveal">
+          <div class="section-label" data-i18n="team.label">Unser Team</div>
+          <h2 class="team__name">Daniele Vitale</h2>
+          <div class="team__role" data-i18n="team.role">Gründer &amp; Leiter von MANTD</div>
+          <p class="team__bio" data-i18n="team.bio">Gemeinsam mit meiner wunderschönen Frau Annina und unseren drei
+            Kindern Samuel, Sofia und
+            Giulia dienen wir Gott. Ich bin 38 Jahre alt und folge Jesus seit circa 20 Jahren
+            nach. Mein Herz brennt für Jesus und dafür, dass auch andere Menschen nicht mehr in der Dunkelheit leben
+            müssen, sondern das Licht des Lebens haben können.</p>
+          <h3 class="team__partners-title" data-i18n="team.partners">Unsere Partner</h3>
+          <div class="team__partner">David Hogan – <a href="http://freedom-ministries.us/" target="_blank"
+              rel="noopener">Freedom Ministries</a></div>
+          <div class="team__partner">Dan Mohler – <a href="http://neckministries.com/" target="_blank"
+              rel="noopener">Neck Ministries</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= GIVE ======= -->
+  <section class="give" id="give">
+    <div class="container">
+      <div class="section-label reveal" data-i18n="give.label">Give</div>
+      <h2 class="section-heading reveal" style="margin-bottom:var(--space-8);">
+        <span data-i18n="give.heading1">Von Herzen</span><br>
+        <span style="color:var(--color-accent);" data-i18n="give.heading2">geben</span>
+      </h2>
+      <p class="give__quote reveal" data-i18n="give.quote">„Jeder, wie er es sich im Herzen vorgenommen hat, nicht
+        widerwillig oder aus Zwang;
+        denn einen fröhlichen Geber hat Gott lieb."</p>
+      <p class="give__ref reveal" data-i18n="give.ref">— 2. Korinther 9:7</p>
+      <p class="give__desc reveal" data-i18n="give.desc">Deine Spende hilft uns, das Evangelium weiterzutragen,
+        Gemeinden zu gründen und
+        Menschen in Not zu unterstützen.</p>
+      <a href="https://pay.raisenow.io/mcqdv" target="_blank" rel="noopener" class="btn btn--primary reveal" data-i18n="give.cta">Jetzt
+        geben</a>
+    </div>
+  </section>
+
+  <!-- ======= FAQ ======= -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div style="text-align:center;">
+        <div class="section-label reveal" data-i18n="faq.label">Häufige Fragen</div>
+        <h2 class="section-heading reveal">
+          <span data-i18n="faq.heading1">Das wollen viele</span><br>
+          <span style="color:var(--color-accent);" data-i18n="faq.heading2">wissen</span>
+        </h2>
+      </div>
+      <div class="faq__list">
+        <div class="faq__item reveal">
+          <button class="faq__question">
+            <span data-i18n="faq.q1">Was ist MANTD?</span>
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            <p data-i18n="faq.a1">MANTD steht für „Make All Nations To Disciples" – ein internationales Missionswerk mit
+              der Vision, das
+              Evangelium von Jesus Christus an die Enden der Erde zu bringen. Aktuell fokussieren wir uns auf den
+              deutschsprachigen und italienischen Raum.</p>
+          </div>
+        </div>
+        <div class="faq__item reveal">
+          <button class="faq__question">
+            <span data-i18n="faq.q2">Was sind New Life. Hausgemeinden?</span>
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            <p data-i18n="faq.a2">New Life. ist ein Jesus-zentriertes Hausgemeinde-Netzwerk. Wir sind überzeugt, dass
+              intime, kraftvolle
+              Gemeinschaften in Häusern – wie in der Apostelgeschichte – die Grundlage für eine lebendige Gemeinde sind.
+            </p>
+          </div>
+        </div>
+        <div class="faq__item reveal">
+          <button class="faq__question">
+            <span data-i18n="faq.q3">Wie kann ich mich einbringen?</span>
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            <p data-i18n="faq.a3">Es gibt viele Wege: Besuche eine Hausgemeinde, nimm an einem Love &amp; Fire oder Sons
+              of Zion Event
+              teil, werde Missionar, unterstütze uns im Gebet oder finanziell. Schreib uns einfach über das
+              Kontaktformular!</p>
+          </div>
+        </div>
+        <div class="faq__item reveal">
+          <button class="faq__question">
+            <span data-i18n="faq.q4">Was passiert bei Love &amp; Fire?</span>
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            <p data-i18n="faq.a4">Love &amp; Fire ist ein 2-Tages-Seminar mit Teachings über unsere Identität in
+              Christus, intensiven
+              Worship-Zeiten und praktischen Straßeneinsätzen. Es geht darum, zu lernen, wie Jesus gelebt hat – und das
+              dann auch zu tun.</p>
+          </div>
+        </div>
+        <div class="faq__item reveal">
+          <button class="faq__question">
+            <span data-i18n="faq.q5">Wie kann ich spenden?</span>
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            <p data-i18n="faq.a5">MANTD ist als gemeinnütziger Verein anerkannt. Du kannst uns per E-Mail an
+              info@mantd.org
+              kontaktieren, um Informationen zur Spende zu erhalten. Jeder Beitrag hilft uns, das Evangelium
+              weiterzutragen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= KONTAKT ======= -->
+  <section class="kontakt" id="kontakt">
+    <div class="container">
+      <div class="kontakt__grid">
+        <div class="reveal">
+          <div class="section-label" data-i18n="kontakt.label">Kontakt</div>
+          <h2 class="kontakt__heading">
+            <span data-i18n="kontakt.heading1">Es wäre schön,</span><br>
+            <span data-i18n="kontakt.heading2">dich</span> <span style="color:var(--color-accent);"
+              data-i18n="kontakt.heading3">kennen</span><br>
+            <span data-i18n="kontakt.heading4">zu lernen</span>
+          </h2>
+          <p class="kontakt__text" data-i18n="kontakt.text">Ob du Fragen hast, Teil unserer Gemeinschaft werden möchtest
+            oder einfach nur reden
+            willst – wir freuen uns auf dich!</p>
+          <div class="kontakt__info">
+            <div class="kontakt__info-item">
+              <div class="kontakt__info-icon">✉</div>
+              <a href="mailto:info@mantd.org">info@mantd.org</a>
+            </div>
+          </div>
+        </div>
+        <form class="kontakt__form reveal" data-success-msg="Danke für deine Nachricht! Wir melden uns bald."
+          onsubmit="event.preventDefault();alert(this.getAttribute('data-success-msg'));">
+          <input class="kontakt__input" type="text" data-i18n-placeholder="kontakt.name" placeholder="Dein Name"
+            required>
+          <input class="kontakt__input" type="email" data-i18n-placeholder="kontakt.email" placeholder="Deine E-Mail"
+            required>
+          <textarea class="kontakt__textarea" data-i18n-placeholder="kontakt.message" placeholder="Deine Nachricht"
+            required></textarea>
+          <button type="submit" class="btn btn--primary" style="align-self:flex-start;"
+            data-i18n="kontakt.send">Nachricht senden</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FINAL CTA ======= -->
+  <section class="final-cta">
+    <div class="container">
+      <h2 class="section-heading reveal">
+        <span data-i18n="finalcta.heading1">Werde Teil der</span><br>
+        <span style="color:var(--color-accent);" data-i18n="finalcta.heading2">Bewegung</span>
+      </h2>
+      <p class="final-cta__sub reveal" data-i18n="finalcta.sub">Gemeinsam können wir Nationen für Jesus gewinnen. Sein
+        globaler Traum beginnt bei
+        dir.</p>
+      <div class="reveal" style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;">
+        <a href="#kontakt" class="btn btn--primary" data-i18n="finalcta.cta1">Schließe dich uns an</a>
+        <a href="#kontakt" class="btn btn--outline" data-i18n="finalcta.cta2">Jesus kennen lernen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#" class="footer__logo">MANTD</a>
+      <ul class="footer__links">
+        <li><a href="#vision" data-i18n="nav.vision">Vision</a></li>
+        <li><a href="#werke" data-i18n="nav.werke">Werke</a></li>
+        <li><a href="#team" data-i18n="nav.team">Team</a></li>
+        <li><a href="#kultur" data-i18n="nav.kultur">Kultur</a></li>
+        <li><a href="#kontakt" data-i18n="nav.kontakt">Kontakt</a></li>
+        <li><a href="#give" data-i18n="nav.give">GIVE</a></li>
+      </ul>
+      <p class="footer__copy" data-i18n="footer.copy">&copy; 2026 MANTD – Make All Nations To Disciples. Mt. 28:19</p>
+    </div>
+  </footer>
+
+  <!-- ======= SCRIPTS ======= -->
+  <script src="translations.js"></script>
+  <script>
+    // ---- Nav scroll effect ----
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // ---- Mobile menu ----
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      const spans = burger.querySelectorAll('span');
+      if (mobileMenu.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        spans[0].style.transform = '';
+        spans[1].style.opacity = '';
+        spans[2].style.transform = '';
+      }
+    });
+    function closeMobile() {
+      mobileMenu.classList.remove('active');
+      const spans = burger.querySelectorAll('span');
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+
+    // ---- GSAP Animations ----
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray('.reveal').forEach((el, i) => {
+      gsap.to(el, {
+        y: 0,
+        opacity: 1,
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          once: true
+        }
+      });
+    });
+
+    gsap.from('.hero__center-logo', { scale: 0.9, opacity: 0, duration: 1.5, ease: 'power3.out' });
+    gsap.from('.scroll-indicator', { opacity: 0, duration: 1, delay: 1.5 });
+
+    ScrollTrigger.create({
+      trigger: '.hero',
+      start: 'top top',
+      pin: true,
+      pinSpacing: false,
+      scrub: true
+    });
+
+    gsap.from('.hero__title', { y: 60, opacity: 0, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: '.hero-content-section', start: 'top 60%' } });
+    gsap.from('.hero__subtitle', { y: 40, opacity: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: '.hero-content-section', start: 'top 50%' } });
+    gsap.from('.hero__ctas', { y: 30, opacity: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: '.hero-content-section', start: 'top 40%' } });
+
+    // Ticker marquee
+    gsap.to('#ticker', {
+      x: '-50%',
+      duration: 60,
+      ease: 'none',
+      repeat: -1
+    });
+
+    // ---- Counter animation ----
+    const counterNumbers = document.querySelectorAll('.counter__number[data-target]');
+    counterNumbers.forEach(num => {
+      const target = parseInt(num.dataset.target);
+      ScrollTrigger.create({
+        trigger: num,
+        start: 'top 85%',
+        once: true,
+        onEnter: () => {
+          gsap.to({ val: 0 }, {
+            val: target,
+            duration: 2.5,
+            ease: 'power2.out',
+            onUpdate: function () {
+              num.textContent = Math.round(this.targets()[0].val).toLocaleString('de-DE');
+            }
+          });
+        }
+      });
+    });
+
+    // ---- Werke Tabs ----
+    const tabs = document.querySelectorAll('.werke__tab');
+    const panels = document.querySelectorAll('.werke__panel');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('panel-' + tab.dataset.panel).classList.add('active');
+      });
+    });
+
+    // ---- FAQ Accordion ----
+    document.querySelectorAll('.faq__question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq__item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    // ---- Smooth scroll for anchor links ----
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -173,6 +173,12 @@ const translations = {
 
     // Footer
     "footer.copy": "© 2026 MANTD – Make All Nations To Disciples. Mt. 28:19",
+    // Newsletter
+    "news.title":       "Bleib verbunden.",
+    "news.subtitle":    "Hol dir Updates über Mission Trips, Visionen und Gottes Wirken direkt in dein Postfach.",
+    "news.placeholder": "Deine E-Mail Adresse",
+    "news.btn":         "Anmelden",
+    "news.success":     "Willkommen im Team! Bitte bestätige deine E-Mail.",
   },
 
   /* ──────────────────────────────── ENGLISH ── */
@@ -323,6 +329,12 @@ const translations = {
     "finalcta.cta2":     "Get to know Jesus",
 
     "footer.copy": "© 2026 MANTD – Make All Nations To Disciples. Mt. 28:19",
+    // Newsletter
+    "news.title":       "Stay connected.",
+    "news.subtitle":    "Get updates on mission trips, visions and God's work directly in your inbox.",
+    "news.placeholder": "Your email address",
+    "news.btn":         "Subscribe",
+    "news.success":     "Welcome to the team! Please confirm your email.",
   },
 
   /* ──────────────────────────────── ITALIANO ── */
@@ -473,6 +485,12 @@ const translations = {
     "finalcta.cta2":     "Conoscere Gesù",
 
     "footer.copy": "© 2026 MANTD – Make All Nations To Disciples. Mt. 28:19",
+    // Newsletter
+    "news.title":       "Resta connesso.",
+    "news.subtitle":    "Ricevi aggiornamenti su missioni, visioni e l'opera di Dio direttamente nella tua posta.",
+    "news.placeholder": "Il tuo indirizzo email",
+    "news.btn":         "Iscriviti",
+    "news.success":     "Benvenuto nel team! Per favore conferma la tua email.",
   }
 };
 

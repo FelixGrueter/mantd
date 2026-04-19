@@ -513,16 +513,22 @@
             </div>
           </div>
         </div>
-        <form class="kontakt__form reveal" data-success-msg="Danke für deine Nachricht! Wir melden uns bald."
-          onsubmit="event.preventDefault();alert(this.getAttribute('data-success-msg'));">
-          <input class="kontakt__input" type="text" data-i18n-placeholder="kontakt.name" placeholder="Dein Name"
+        <form class="kontakt__form reveal" id="contactForm">
+          <!-- Honeypot: Anti-Spam (hidden via CSS) -->
+          <div class="hp-field">
+            <input type="text" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <input class="kontakt__input" name="name" type="text" data-i18n-placeholder="kontakt.name" placeholder="Dein Name"
             required>
-          <input class="kontakt__input" type="email" data-i18n-placeholder="kontakt.email" placeholder="Deine E-Mail"
+          <input class="kontakt__input" name="email" type="email" data-i18n-placeholder="kontakt.email" placeholder="Deine E-Mail"
             required>
-          <textarea class="kontakt__textarea" data-i18n-placeholder="kontakt.message" placeholder="Deine Nachricht"
+          <textarea class="kontakt__textarea" name="message" data-i18n-placeholder="kontakt.message" placeholder="Deine Nachricht"
             required></textarea>
-          <button type="submit" class="btn btn--primary" style="align-self:flex-start;"
+          <button type="submit" id="contactSubmit" class="btn btn--primary" style="align-self:flex-start;"
             data-i18n="kontakt.send">Nachricht senden</button>
+          
+          <p id="formStatus" class="form-status"></p>
         </form>
       </div>
     </div>
@@ -560,6 +566,23 @@
       <p class="footer__copy" data-i18n="footer.copy">&copy; 2026 MANTD – Make All Nations To Disciples. Mt. 28:19</p>
     </div>
   </footer>
+
+  <!-- ======= NEWSLETTER POPUP ======= -->
+  <div class="newsletter-modal" id="newsletterModal">
+    <div class="newsletter-card" id="newsletterCard">
+      <button class="newsletter-close" id="closeNewsletter" aria-label="Close Newsletter">&times;</button>
+      <div class="newsletter-content">
+        <span class="newsletter-icon">✉️</span>
+        <h3 class="newsletter-title" data-i18n="news.title">Bleib verbunden.</h3>
+        <p class="newsletter-subtitle" data-i18n="news.subtitle">Hol dir Updates über Mission Trips, Visionen und Gottes Wirken direkt in dein Postfach.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" class="newsletter-input" data-i18n-placeholder="news.placeholder" placeholder="Deine E-Mail Adresse" required>
+          <button type="submit" class="btn btn--primary newsletter-submit" data-i18n="news.btn">Anmelden</button>
+        </form>
+        <p class="newsletter-success" id="newsletterSuccess" data-i18n="news.success">Willkommen im Team! Bitte bestätige deine E-Mail.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- ======= SCRIPTS ======= -->
   <script src="translations.js"></script>
@@ -687,7 +710,137 @@
         }
       });
     });
+
+    // ---- Newsletter Logic (Nuclear Fix) ----
+    let newsletterOpened = false;
+
+    function initNewsletter() {
+      const newsletterModal = document.getElementById('newsletterModal');
+      const newsletterCard = document.getElementById('newsletterCard');
+      const closeNewsletter = document.getElementById('closeNewsletter');
+      const newsletterForm = document.getElementById('newsletterForm');
+      const newsletterSuccess = document.getElementById('newsletterSuccess');
+
+      if (!newsletterModal) {
+        console.error('Newsletter Modal not found in DOM');
+        return;
+      }
+
+      function openNewsletter() {
+        if (newsletterOpened || localStorage.getItem('newsletterShown')) return;
+        newsletterOpened = true;
+        
+        try {
+          newsletterModal.style.display = 'flex';
+          gsap.fromTo(newsletterModal, { opacity: 0 }, { opacity: 1, duration: 0.5 });
+          gsap.fromTo(newsletterCard, { y: 50, scale: 0.9 }, { y: 0, scale: 1, duration: 0.8, ease: 'back.out(1.7)' });
+          
+          localStorage.setItem('newsletterShown', 'true');
+        } catch (err) {
+          // Silent fail
+        }
+      }
+
+      closeNewsletter.addEventListener('click', () => {
+        gsap.to(newsletterModal, { opacity: 0, duration: 0.3, onComplete: () => {
+          newsletterModal.style.display = 'none';
+        }});
+      });
+
+      newsletterForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const submitBtn = newsletterForm.querySelector('button');
+        const emailInput = newsletterForm.querySelector('.newsletter-input');
+        const originalBtnText = submitBtn.textContent;
+        
+        // UI Feedback - Loading
+        submitBtn.disabled = true;
+        submitBtn.textContent = '...';
+
+        try {
+          const formData = new FormData();
+          formData.append('email', emailInput.value);
+
+          const response = await fetch('newsletter_subscribe.php', {
+            method: 'POST',
+            body: formData
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            newsletterForm.style.display = 'none';
+            newsletterSuccess.style.display = 'block';
+            newsletterSuccess.textContent = result.message;
+            setTimeout(() => { closeNewsletter.click(); }, 4000);
+          } else {
+            alert(result.message || 'Fehler bei der Anmeldung.');
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+          }
+        } catch (error) {
+          alert('Ein technischer Fehler ist aufgetreten.');
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+      });
+
+      // Trigger on Scroll
+      ScrollTrigger.create({
+        trigger: '#vision',
+        start: 'top 40%', 
+        onEnter: () => openNewsletter()
+      });
+    }
+
+    // Initialize after a small delay to ensure i18n and layout are ready
+    window.addEventListener('load', () => {
+      initNewsletter();
+      ScrollTrigger.refresh();
+    });
+
+    // ---- Contact Form AJAX ----
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('contactSubmit');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // UI Feedback
+        submitBtn.disabled = true;
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = '...';
+        formStatus.textContent = '';
+        formStatus.className = 'form-status';
+
+        const formData = new FormData(contactForm);
+
+        try {
+          const response = await fetch('contact.php', {
+            method: 'POST',
+            body: formData
+          });
+
+          const result = await response.json();
+
+          if (response.ok && result.success) {
+            formStatus.textContent = result.message;
+            formStatus.classList.add('success');
+            contactForm.reset();
+          } else {
+            throw new Error(result.message || 'Fehler beim Senden.');
+          }
+        } catch (error) {
+          formStatus.textContent = error.message;
+          formStatus.classList.add('error');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      });
+    }
   </script>
 </body>
-
 </html>

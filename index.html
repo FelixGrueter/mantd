@@ -530,6 +530,9 @@
             data-i18n="kontakt.send">Nachricht senden</button>
 
           <p id="formStatus" class="form-status"></p>
+          <p class="kontakt__hint">
+            Bitte beschreibe dein Anliegen mit ein paar Sätzen, damit wir dir gut antworten können.
+          </p>
         </form>
       </div>
     </div>
@@ -761,6 +764,7 @@
 
         // UI Feedback - Loading
         submitBtn.disabled = true;
+        submitBtn.setAttribute('aria-busy', 'true');
         submitBtn.textContent = '...';
 
         try {
@@ -842,6 +846,7 @@
           formStatus.textContent = error.message;
           formStatus.classList.add('error');
         } finally {
+          submitBtn.removeAttribute('aria-busy');
           submitBtn.disabled = false;
           submitBtn.textContent = originalText;
         }

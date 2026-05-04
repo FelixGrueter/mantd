@@ -167,6 +167,8 @@ $headers .= "Reply-To: $email\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "X-Entity-Ref-ID: " . uniqid('mantd-', true) . "\r\n";
 
 /* --------------------------------------------------------------------------
  * 7. Mail-Versand

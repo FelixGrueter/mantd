@@ -1083,6 +1083,12 @@ button {
   resize: vertical;
 }
 
+@media (max-width: 768px) {
+  .kontakt__form button[type="submit"] {
+    margin-bottom: var(--space-8);
+  }
+}
+
 /* Honeypot Field */
 .hp-field {
   display: none !important;

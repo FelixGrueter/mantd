@@ -150,7 +150,7 @@
         </div>
         <div class="vision__image reveal">
           <img src="assets/images/daniele-vitale-gruender.jpg" data-i18n-alt="vision.img.alt"
-            alt="Daniele Vitale – Gründer MANTD">
+            alt="Daniele Vitale – Gründer MANTD" loading="lazy">
         </div>
       </div>
     </div>
@@ -206,7 +206,7 @@
       <div class="werke__panel active" id="panel-newlife">
         <div class="werke__card">
           <div class="werke__card-image">
-            <img src="assets/images/newlife-gemeinde.jpg" data-i18n-alt="newlife.img.alt" alt="New Life. Logo">
+            <img src="assets/images/newlife-gemeinde.jpg" data-i18n-alt="newlife.img.alt" alt="New Life. Logo" loading="lazy">
           </div>
           <div>
             <h3 class="werke__card-title">New Life.</h3>
@@ -229,7 +229,7 @@
         <div class="werke__card">
           <div class="werke__card-image">
             <img src="assets/images/loveandfire-logo.png" data-i18n-alt="lovefire.img.alt" alt="Love &amp; Fire Logo"
-              style="object-fit:contain;background:#fff;">
+              style="object-fit:contain;background:#fff;" loading="lazy">
           </div>
           <div>
             <h3 class="werke__card-title">Love &amp; Fire</h3>
@@ -252,7 +252,7 @@
         <div class="werke__card">
           <div class="werke__card-image">
             <img src="assets/images/sonsofzion-logo.jpg" data-i18n-alt="sons.img.alt" alt="Sons of Zion Logo"
-              style="object-fit:contain;background:#000;padding:10px;">
+              style="object-fit:contain;background:#000;padding:10px;" loading="lazy">
           </div>
           <div>
             <h3 class="werke__card-title">Sons of Zion</h3>
@@ -311,7 +311,7 @@
         </div>
         <div class="feature-card reveal">
           <img src="assets/images/alpha-logo.png" data-i18n-alt="feature.alpha.img.alt" alt="Alpha Kurse Logo"
-            class="feature-card__icon feature-card__icon--img">
+            class="feature-card__icon feature-card__icon--img" loading="lazy">
           <h3 class="feature-card__title" data-i18n="feature.alpha.title">Alpha Kurse</h3>
           <p class="feature-card__desc" data-i18n="feature.alpha.desc">Kulturgerechte Evangelisation in Europa. Der Kurs
             schafft liebevolle
@@ -375,7 +375,7 @@
     <div class="container">
       <div class="team__grid">
         <div class="team__image reveal">
-          <img src="assets/images/daniele-vitale-team.jpg" data-i18n-alt="team.img.alt" alt="Daniele Vitale">
+          <img src="assets/images/daniele-vitale-team.jpg" data-i18n-alt="team.img.alt" alt="Daniele Vitale" loading="lazy">
         </div>
         <div class="reveal">
           <div class="section-label" data-i18n="team.label">Unser Team</div>
@@ -659,7 +659,7 @@
     // Ticker marquee
     gsap.to('#ticker', {
       x: '-50%',
-      duration: 60,
+      duration: window.innerWidth < 768 ? 90 : 60,
       ease: 'none',
       repeat: -1
     });

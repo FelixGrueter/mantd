@@ -44,7 +44,7 @@
   --space-16: 4rem;
   --space-24: 6rem;
   --space-32: 8rem;
-  --section-padding: clamp(5rem, 12vw, 10rem);
+  --section-padding: clamp(3.5rem, 10vw, 10rem);
 }
 
 html {
@@ -207,9 +207,12 @@ button {
 .nav__burger {
   display: none;
   flex-direction: column;
-  gap: 5px;
-  width: 28px;
-  padding: 4px 0;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
 }
 
 .nav__burger span {
@@ -230,7 +233,7 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-8);
+  gap: var(--space-6);
 }
 
 .mobile-menu.active {
@@ -342,7 +345,7 @@ button {
 }
 
 .hero__big-logo {
-  width: clamp(300px, 60vw, 720px);
+  width: clamp(240px, 70vw, 720px);
   height: auto;
 }
 
@@ -763,6 +766,10 @@ button {
 @media (max-width: 768px) {
   .werke__card {
     grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  .werke__card-image {
+    aspect-ratio: 16/9;
   }
 }
 
@@ -819,13 +826,13 @@ button {
   font-weight: 300;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .features__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 768px) {
   .features__grid {
     grid-template-columns: 1fr;
   }
@@ -1294,7 +1301,7 @@ button {
 
 /* Mobile language switcher (inside mobile menu) */
 .lang-switcher--mobile {
-  margin: var(--space-4) 0 0;
+  margin: var(--space-8) 0 0;
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(240, 237, 232, 0.15);
   padding: 4px;

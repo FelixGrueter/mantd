@@ -667,7 +667,7 @@ if (empty($_SESSION['form_time'])) {
         end: '+=100%',
         pin: true,
         pinSpacing: true,
-        scrub: true
+        scrub: 1 // Glatteres Scroll-Erlebnis auf Touch-Geräten
       }
     });
 

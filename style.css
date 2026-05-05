@@ -78,6 +78,12 @@ button {
   border: none;
   background: none;
   color: inherit;
+  touch-action: manipulation; /* Eliminiert 300ms Delay auf Mobile */
+}
+
+/* Safe Area Support für moderne Smartphones */
+:root {
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .container {
@@ -241,6 +247,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: var(--space-6);
+  padding-bottom: var(--safe-area-bottom);
 }
 
 .mobile-menu.active {
@@ -429,6 +436,10 @@ button {
   .btn:hover {
     transform: translateY(-2px);
   }
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98); /* Sofortiges Feedback beim Tippen */
 }
 
 .btn--primary {
@@ -729,6 +740,7 @@ button {
   color: var(--color-base);
   border-color: var(--color-accent);
 }
+
 @media (hover: hover) {
   .werke__tab:hover {
     background: var(--color-accent);
@@ -797,6 +809,7 @@ button {
     grid-template-columns: 1fr;
     gap: var(--space-6);
   }
+
   .werke__card-image {
     aspect-ratio: 16/9;
   }
@@ -1299,6 +1312,23 @@ button {
     flex-direction: column;
     justify-content: center;
     gap: var(--space-6);
+    padding-bottom: var(--safe-area-bottom); /* Platz für Home-Indikator */
+  }
+  
+  .footer__links {
+    justify-content: center;
+    gap: var(--space-1) var(--space-4);
+  }
+  
+  .footer__links li {
+    flex: 1 1 40%; /* Erzeugt ein sauberes 2-Spalten-Gefühl auf kleinen Screens */
+    text-align: center;
+  }
+  
+  .footer__links a {
+    padding: var(--space-3) 0; /* UX: Bessere Treffsicherheit für Finger */
+    display: block;
+    font-size: var(--text-sm);
   }
 }
 
@@ -1543,8 +1573,11 @@ button {
 }
 
 @media (max-width: 768px) {
+
   /* Prevent iOS auto-zoom on form inputs */
-  input, textarea, select {
+  input,
+  textarea,
+  select {
     font-size: 16px !important;
   }
 }

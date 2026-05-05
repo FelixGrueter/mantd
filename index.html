@@ -646,7 +646,7 @@
     });
 
     // Initial state: 50% smaller
-    gsap.set('.hero__center-logo', { scale: 0.5, opacity: 0 });
+    gsap.set('.hero__center-logo', { scale: 0.2, opacity: 0 });
 
     // Fade in on load
     gsap.to('.hero__center-logo', { opacity: 1, duration: 1.5, ease: 'power3.out' });
@@ -664,7 +664,8 @@
       }
     });
 
-    heroTl.to('.hero__center-logo', { scale: 1, ease: 'none' });
+    heroTl.to('.hero__center-logo', { scale: 1, ease: 'none' }, 0)
+          .to('.hero__overlay', { backgroundColor: 'rgba(0, 0, 0, 0.6)', ease: 'none' }, 0);
 
     gsap.from('.hero__title', { y: 60, opacity: 0, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: '.hero-content-section', start: 'top 60%' } });
     gsap.from('.hero__subtitle', { y: 40, opacity: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: '.hero-content-section', start: 'top 50%' } });

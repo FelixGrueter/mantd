@@ -14,6 +14,7 @@ git pull --rebase
 
 # Deploy per rsync
 rsync -av --delete \
+  --chmod=D755,F644 \
   --exclude=".git" \
   --exclude=".vscode" \
   --exclude="node_modules" \

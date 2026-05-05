@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,38 +8,40 @@
   <link rel="stylesheet" href="assets/fonts.css" />
 
   <style>
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
     :root {
-      --color-bg:       #f5f3ef;
-      --color-surface:  #ffffff;
-      --color-ink:      #111111;
-      --color-muted:    #6b6b6b;
-      --color-accent:   #e8622c;
-      --color-border:   rgba(17, 17, 17, 0.1);
-      --color-rule:     rgba(17, 17, 17, 0.12);
+      --color-bg: #f5f3ef;
+      --color-surface: #ffffff;
+      --color-ink: #111111;
+      --color-muted: #6b6b6b;
+      --color-accent: #e8622c;
+      --color-border: rgba(17, 17, 17, 0.1);
+      --color-rule: rgba(17, 17, 17, 0.12);
       --color-accent-bg: rgba(232, 98, 44, 0.07);
 
       --font-display: 'Bebas Neue', sans-serif;
-      --font-body:    'DM Sans', system-ui, sans-serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
 
-      --text-xs:   clamp(0.7rem,  1.5vw, 0.8rem);
-      --text-sm:   clamp(0.825rem, 2vw,  0.9rem);
-      --text-base: clamp(0.9rem,   2vw,  1rem);
-      --text-lg:   clamp(1rem,     2.5vw, 1.15rem);
-      --text-xl:   clamp(1.25rem,  3vw,  1.5rem);
-      --text-2xl:  clamp(1.75rem,  5vw,  2.5rem);
-      --text-hero: clamp(3rem,     9vw,  6rem);
+      --text-xs: clamp(0.7rem, 1.5vw, 0.8rem);
+      --text-sm: clamp(0.825rem, 2vw, 0.9rem);
+      --text-base: clamp(0.9rem, 2vw, 1rem);
+      --text-lg: clamp(1rem, 2.5vw, 1.15rem);
+      --text-xl: clamp(1.25rem, 3vw, 1.5rem);
+      --text-2xl: clamp(1.75rem, 5vw, 2.5rem);
+      --text-hero: clamp(3rem, 9vw, 6rem);
 
-      --space-2:  0.5rem;
-      --space-3:  0.75rem;
-      --space-4:  1rem;
-      --space-6:  1.5rem;
-      --space-8:  2rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
       --space-12: 3rem;
       --space-16: 4rem;
       --space-24: 6rem;
@@ -47,7 +50,9 @@
       --radius: 2px;
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       background-color: var(--color-bg);
@@ -78,7 +83,9 @@
       text-decoration: none;
     }
 
-    .logo span { color: var(--color-accent); }
+    .logo span {
+      color: var(--color-accent);
+    }
 
     .back-link {
       font-size: var(--text-sm);
@@ -92,14 +99,19 @@
       transition: color 0.2s ease;
     }
 
-    .back-link:hover { color: var(--color-accent); }
+    .back-link:hover {
+      color: var(--color-accent);
+    }
 
     .back-link svg {
-      width: 14px; height: 14px;
+      width: 14px;
+      height: 14px;
       transition: transform 0.2s ease;
     }
 
-    .back-link:hover svg { transform: translateX(-3px); }
+    .back-link:hover svg {
+      transform: translateX(-3px);
+    }
 
     /* ── Hero ────────────────────────────────────────────── */
     .hero {
@@ -128,7 +140,9 @@
       color: var(--color-ink);
     }
 
-    .hero__title span { color: var(--color-accent); }
+    .hero__title span {
+      color: var(--color-accent);
+    }
 
     .hero__rule {
       margin-top: var(--space-8);
@@ -155,15 +169,41 @@
       animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
 
-    .block:nth-child(1) { animation-delay: 60ms; }
-    .block:nth-child(2) { animation-delay: 120ms; }
-    .block:nth-child(3) { animation-delay: 180ms; }
-    .block:nth-child(4) { animation-delay: 240ms; }
-    .block:nth-child(5) { animation-delay: 300ms; }
-    .block:nth-child(6) { animation-delay: 360ms; }
-    .block:nth-child(7) { animation-delay: 420ms; }
-    .block:nth-child(8) { animation-delay: 480ms; }
-    .block:last-child   { border-bottom: none; }
+    .block:nth-child(1) {
+      animation-delay: 60ms;
+    }
+
+    .block:nth-child(2) {
+      animation-delay: 120ms;
+    }
+
+    .block:nth-child(3) {
+      animation-delay: 180ms;
+    }
+
+    .block:nth-child(4) {
+      animation-delay: 240ms;
+    }
+
+    .block:nth-child(5) {
+      animation-delay: 300ms;
+    }
+
+    .block:nth-child(6) {
+      animation-delay: 360ms;
+    }
+
+    .block:nth-child(7) {
+      animation-delay: 420ms;
+    }
+
+    .block:nth-child(8) {
+      animation-delay: 480ms;
+    }
+
+    .block:last-child {
+      border-bottom: none;
+    }
 
     .block__label {
       font-family: var(--font-body);
@@ -175,7 +215,9 @@
       padding-top: 0.2em;
     }
 
-    .block__body { font-size: var(--text-base); }
+    .block__body {
+      font-size: var(--text-base);
+    }
 
     .block__body h3 {
       font-family: var(--font-display);
@@ -192,7 +234,9 @@
       margin-bottom: var(--space-2);
     }
 
-    .block__body p:last-child { margin-bottom: 0; }
+    .block__body p:last-child {
+      margin-bottom: 0;
+    }
 
     .block__body strong {
       font-weight: 600;
@@ -209,13 +253,17 @@
     .block__body a::after {
       content: '';
       position: absolute;
-      bottom: -1px; left: 0;
-      width: 0; height: 1px;
+      bottom: -1px;
+      left: 0;
+      width: 0;
+      height: 1px;
       background: currentColor;
       transition: width 0.25s cubic-bezier(0.65, 0, 0.35, 1);
     }
 
-    .block__body a:hover::after { width: 100%; }
+    .block__body a:hover::after {
+      width: 100%;
+    }
 
     /* ── Scope list (Geltungsbereich) ────────────────────── */
     .scope-list {
@@ -269,7 +317,11 @@
       margin-top: var(--space-3);
     }
 
-    .badge svg { width: 12px; height: 12px; flex-shrink: 0; }
+    .badge svg {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
 
     /* ── Notice ──────────────────────────────────────────── */
     .notice {
@@ -318,8 +370,15 @@
 
     /* ── Animations ──────────────────────────────────────── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(1.2rem); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(1.2rem);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* ── Responsive ──────────────────────────────────────── */
@@ -328,7 +387,11 @@
         grid-template-columns: 1fr;
         gap: var(--space-2);
       }
-      .block__label { font-size: 0.65rem; }
+
+      .block__label {
+        font-size: 0.65rem;
+      }
+
       .site-header {
         flex-direction: column;
         align-items: flex-start;
@@ -337,13 +400,15 @@
     }
   </style>
 </head>
+
 <body>
 
   <header class="site-header">
     <a href="https://www.mantd.org" class="logo">MANTD</a>
     <a href="https://www.mantd.org" class="back-link">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="15 18 9 12 15 6"/>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
       </svg>
       Zurück zur Website
     </a>
@@ -365,9 +430,10 @@
         <p>Internationales Missionswerk</p>
         <p>Nicht eingetragener Verein</p>
         <span class="badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            <polyline points="9 12 11 14 15 10"/>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            <polyline points="9 12 11 14 15 10" />
           </svg>
           Gemeinnützig anerkannt
         </span>
@@ -378,7 +444,8 @@
     <div class="block">
       <p class="block__label">Geltungs­bereich</p>
       <div class="block__body">
-        <p>Dieses Impressum gilt für alle digitalen Angebote von MANTD, einschließlich folgender Websites, Social-Media-Auftritte und des Newsletters:</p>
+        <p>Dieses Impressum gilt für alle digitalen Angebote von MANTD, einschließlich folgender Websites,
+          Social-Media-Auftritte und des Newsletters:</p>
         <ul class="scope-list">
           <li>
             <div>
@@ -395,31 +462,31 @@
           <li>
             <div>
               <strong>new Life.</strong> – Hausgemeinde-Netzwerk
-              <span class="scope-url">www.newlife.mantd.org</span>
+              <span class="scope-url">www.newlife-international.org</span>
             </div>
           </li>
           <li>
             <div>
               <strong>Sons of Zion</strong> – Seminare &amp; Schulungen
-              <span class="scope-url">www.sons-of-zion.org</span>
+              <span class="scope-url">www.sonsofzion.org</span>
             </div>
           </li>
           <li>
             <div>
               <strong>Facebook</strong> – Soziales Netzwerk
-              <span class="scope-url">facebook.com/mantd.org</span>
+              <span class="scope-url">facebook.com/mantd</span>
             </div>
           </li>
           <li>
             <div>
               <strong>Instagram</strong> – Soziales Netzwerk
-              <span class="scope-url">instagram.com/mantd.org</span>
+              <span class="scope-url">instagram.com/mantdofficial</span>
             </div>
           </li>
           <li>
             <div>
               <strong>TikTok</strong> – Soziales Netzwerk
-              <span class="scope-url">tiktok.com/@mantd.org</span>
+              <span class="scope-url">tiktok.com/@mantdinternational</span>
             </div>
           </li>
           <li>
@@ -459,7 +526,8 @@
       <div class="block__body">
         <p><strong>Telefon:</strong> <a href="tel:+4977638049801">+49 7763 804 98 01</a></p>
         <p><strong>E-Mail:</strong> <a href="mailto:info@mantd.org">info@mantd.org</a></p>
-        <p><strong>Website:</strong> <a href="https://www.mantd.org" target="_blank" rel="noopener">www.mantd.org</a></p>
+        <p><strong>Website:</strong> <a href="https://www.mantd.org" target="_blank" rel="noopener">www.mantd.org</a>
+        </p>
       </div>
     </div>
 
@@ -467,8 +535,11 @@
     <div class="block">
       <p class="block__label">Haftung</p>
       <div class="block__body">
-        <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
-        <p style="margin-top: var(--space-3);">Die Inhalte unserer Websites und Social-Media-Kanäle wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+        <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für
+          den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+        <p style="margin-top: var(--space-3);">Die Inhalte unserer Websites und Social-Media-Kanäle wurden mit größter
+          Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine
+          Gewähr übernehmen.</p>
       </div>
     </div>
 
@@ -476,7 +547,9 @@
     <div class="block">
       <p class="block__label">Urheberrecht</p>
       <div class="block__body">
-        <p>Die durch MANTD erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung von MANTD.</p>
+        <p>Die durch MANTD erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die
+          Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts
+          bedürfen der schriftlichen Zustimmung von MANTD.</p>
       </div>
     </div>
 
@@ -495,4 +568,5 @@
   </footer>
 
 </body>
+
 </html>

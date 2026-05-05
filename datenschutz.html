@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,38 +8,40 @@
   <link rel="stylesheet" href="assets/fonts.css" />
 
   <style>
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
     :root {
-      --color-bg:        #f5f3ef;
-      --color-surface:   #ffffff;
-      --color-ink:       #111111;
-      --color-muted:     #6b6b6b;
-      --color-accent:    #e8622c;
-      --color-border:    rgba(17, 17, 17, 0.1);
-      --color-rule:      rgba(17, 17, 17, 0.12);
+      --color-bg: #f5f3ef;
+      --color-surface: #ffffff;
+      --color-ink: #111111;
+      --color-muted: #6b6b6b;
+      --color-accent: #e8622c;
+      --color-border: rgba(17, 17, 17, 0.1);
+      --color-rule: rgba(17, 17, 17, 0.12);
       --color-accent-bg: rgba(232, 98, 44, 0.07);
 
       --font-display: 'Bebas Neue', sans-serif;
-      --font-body:    'DM Sans', system-ui, sans-serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
 
-      --text-xs:   clamp(0.7rem,  1.5vw, 0.8rem);
-      --text-sm:   clamp(0.825rem, 2vw,  0.9rem);
-      --text-base: clamp(0.9rem,   2vw,  1rem);
-      --text-lg:   clamp(1rem,     2.5vw, 1.15rem);
-      --text-xl:   clamp(1.25rem,  3vw,  1.5rem);
-      --text-2xl:  clamp(1.75rem,  5vw,  2.5rem);
-      --text-hero: clamp(2.2rem,   7vw,  5rem);
+      --text-xs: clamp(0.7rem, 1.5vw, 0.8rem);
+      --text-sm: clamp(0.825rem, 2vw, 0.9rem);
+      --text-base: clamp(0.9rem, 2vw, 1rem);
+      --text-lg: clamp(1rem, 2.5vw, 1.15rem);
+      --text-xl: clamp(1.25rem, 3vw, 1.5rem);
+      --text-2xl: clamp(1.75rem, 5vw, 2.5rem);
+      --text-hero: clamp(2.2rem, 7vw, 5rem);
 
-      --space-2:  0.5rem;
-      --space-3:  0.75rem;
-      --space-4:  1rem;
-      --space-6:  1.5rem;
-      --space-8:  2rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
       --space-12: 3rem;
       --space-16: 4rem;
       --space-24: 6rem;
@@ -47,7 +50,9 @@
       --radius: 2px;
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       background-color: var(--color-bg);
@@ -90,14 +95,19 @@
       transition: color 0.2s ease;
     }
 
-    .back-link:hover { color: var(--color-accent); }
+    .back-link:hover {
+      color: var(--color-accent);
+    }
 
     .back-link svg {
-      width: 14px; height: 14px;
+      width: 14px;
+      height: 14px;
       transition: transform 0.2s ease;
     }
 
-    .back-link:hover svg { transform: translateX(-3px); }
+    .back-link:hover svg {
+      transform: translateX(-3px);
+    }
 
     /* ── Hero ────────────────────────────────────────────── */
     .hero {
@@ -176,7 +186,9 @@
       transition: color 0.2s ease;
     }
 
-    .toc__list li a:hover { color: var(--color-accent); }
+    .toc__list li a:hover {
+      color: var(--color-accent);
+    }
 
     .toc__list li a::before {
       content: '';
@@ -203,19 +215,57 @@
       animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
 
-    .block:nth-child(1)  { animation-delay: 60ms; }
-    .block:nth-child(2)  { animation-delay: 100ms; }
-    .block:nth-child(3)  { animation-delay: 140ms; }
-    .block:nth-child(4)  { animation-delay: 180ms; }
-    .block:nth-child(5)  { animation-delay: 220ms; }
-    .block:nth-child(6)  { animation-delay: 260ms; }
-    .block:nth-child(7)  { animation-delay: 300ms; }
-    .block:nth-child(8)  { animation-delay: 340ms; }
-    .block:nth-child(9)  { animation-delay: 380ms; }
-    .block:nth-child(10) { animation-delay: 420ms; }
-    .block:nth-child(11) { animation-delay: 460ms; }
-    .block:nth-child(12) { animation-delay: 500ms; }
-    .block:last-child    { border-bottom: none; }
+    .block:nth-child(1) {
+      animation-delay: 60ms;
+    }
+
+    .block:nth-child(2) {
+      animation-delay: 100ms;
+    }
+
+    .block:nth-child(3) {
+      animation-delay: 140ms;
+    }
+
+    .block:nth-child(4) {
+      animation-delay: 180ms;
+    }
+
+    .block:nth-child(5) {
+      animation-delay: 220ms;
+    }
+
+    .block:nth-child(6) {
+      animation-delay: 260ms;
+    }
+
+    .block:nth-child(7) {
+      animation-delay: 300ms;
+    }
+
+    .block:nth-child(8) {
+      animation-delay: 340ms;
+    }
+
+    .block:nth-child(9) {
+      animation-delay: 380ms;
+    }
+
+    .block:nth-child(10) {
+      animation-delay: 420ms;
+    }
+
+    .block:nth-child(11) {
+      animation-delay: 460ms;
+    }
+
+    .block:nth-child(12) {
+      animation-delay: 500ms;
+    }
+
+    .block:last-child {
+      border-bottom: none;
+    }
 
     .block__label {
       font-family: var(--font-body);
@@ -243,7 +293,9 @@
       margin-bottom: var(--space-3);
     }
 
-    .block__body p:last-child { margin-bottom: 0; }
+    .block__body p:last-child {
+      margin-bottom: 0;
+    }
 
     .block__body strong {
       font-weight: 600;
@@ -260,13 +312,17 @@
     .block__body a::after {
       content: '';
       position: absolute;
-      bottom: -1px; left: 0;
-      width: 0; height: 1px;
+      bottom: -1px;
+      left: 0;
+      width: 0;
+      height: 1px;
       background: currentColor;
       transition: width 0.25s cubic-bezier(0.65, 0, 0.35, 1);
     }
 
-    .block__body a:hover::after { width: 100%; }
+    .block__body a:hover::after {
+      width: 100%;
+    }
 
     /* ── Sub-sections ────────────────────────────────────── */
     .sub {
@@ -335,7 +391,10 @@
       border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 6%, transparent);
     }
 
-    .dsl-table tr:first-child { padding-top: 0; }
+    .dsl-table tr:first-child {
+      padding-top: 0;
+    }
+
     .dsl-table tr:last-child {
       padding-bottom: 0;
       border-bottom: none;
@@ -371,24 +430,39 @@
 
     /* Tablet & Desktop: zweispaltige Tabelle ab 620px */
     @media (min-width: 620px) {
-      .dsl-table { display: table; }
-      .dsl-table tbody { display: table-row-group; }
+      .dsl-table {
+        display: table;
+      }
+
+      .dsl-table tbody {
+        display: table-row-group;
+      }
+
       .dsl-table tr {
         display: table-row;
         padding: 0;
         border-bottom: none;
       }
+
       .dsl-table td {
         display: table-cell;
         padding: var(--space-3) 0;
       }
-      .dsl-table tr:first-child td { padding-top: 0; }
-      .dsl-table tr:last-child  td { padding-bottom: 0; }
+
+      .dsl-table tr:first-child td {
+        padding-top: 0;
+      }
+
+      .dsl-table tr:last-child td {
+        padding-bottom: 0;
+      }
+
       .dsl-table td:first-child {
         width: 36%;
         padding-right: var(--space-6);
         margin-bottom: 0;
       }
+
       .dsl-table__ref {
         display: block;
         margin-left: 0;
@@ -443,8 +517,15 @@
 
     /* ── Animations ──────────────────────────────────────── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(1.2rem); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(1.2rem);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* ── Responsive ──────────────────────────────────────── */
@@ -457,13 +538,15 @@
     }
   </style>
 </head>
+
 <body>
 
   <header class="site-header">
     <a href="https://www.mantd.org" class="logo">MANTD</a>
     <a href="https://www.mantd.org" class="back-link">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="15 18 9 12 15 6"/>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
       </svg>
       Zurück zur Website
     </a>
@@ -514,24 +597,24 @@
               <td>Love &amp; Fire Spiritual Intensives</td>
             </tr>
             <tr>
-              <td>newlife.mantd.org<span class="dsl-table__ref">Website</span></td>
+              <td>newlife-international.org<span class="dsl-table__ref">Website</span></td>
               <td>new Life. Hausgemeinde-Netzwerk</td>
             </tr>
             <tr>
-              <td>sons-of-zion.org<span class="dsl-table__ref">Website</span></td>
-              <td>Sons of Zion Seminare</td>
+              <td>sonsofzion.org<span class="dsl-table__ref">Website</span></td>
+              <td>Sons of Zion Netzwerk</td>
             </tr>
             <tr>
               <td>Facebook<span class="dsl-table__ref">Social Media</span></td>
-              <td>facebook.com/mantd.org</td>
+              <td>facebook.com/mantd</td>
             </tr>
             <tr>
               <td>Instagram<span class="dsl-table__ref">Social Media</span></td>
-              <td>instagram.com/mantd.org</td>
+              <td>instagram.com/mantdofficial</td>
             </tr>
             <tr>
               <td>TikTok<span class="dsl-table__ref">Social Media</span></td>
-              <td>tiktok.com/@mantd.org</td>
+              <td>tiktok.com/@mantdinternational</td>
             </tr>
             <tr>
               <td>MANTD Newsletter<span class="dsl-table__ref">E-Mail</span></td>
@@ -568,7 +651,8 @@
       <p class="block__label">03</p>
       <h2 class="block__title">GRUNDSÄTZE DER DATEN­VERARBEITUNG</h2>
       <div class="block__body">
-        <p>Wir nehmen den Schutz deiner persönlichen Daten ernst. Wir verarbeiten personenbezogene Daten nur dann, wenn eine gesetzliche Grundlage nach Art. 6 DSGVO vorliegt:</p>
+        <p>Wir nehmen den Schutz deiner persönlichen Daten ernst. Wir verarbeiten personenbezogene Daten nur dann, wenn
+          eine gesetzliche Grundlage nach Art. 6 DSGVO vorliegt:</p>
         <table class="dsl-table">
           <tbody>
             <tr>
@@ -589,7 +673,8 @@
             </tr>
           </tbody>
         </table>
-        <p style="margin-top: var(--space-3);">Daten werden nur so lange gespeichert, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.</p>
+        <p style="margin-top: var(--space-3);">Daten werden nur so lange gespeichert, wie es für den jeweiligen Zweck
+          erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.</p>
       </div>
     </div>
 
@@ -598,9 +683,12 @@
       <p class="block__label">04</p>
       <h2 class="block__title">WEBSITES &amp; HOSTING</h2>
       <div class="block__body">
-        <p>Unsere Websites werden gehostet bei der <strong>ALL-INKL.COM — Neue Medien Münnich</strong>, Inh. René Münnich, Hauptstraße 68, 02742 Friedersdorf, Deutschland. Mit dem Hosting-Anbieter besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO. Die Server stehen ausschließlich in Deutschland.</p>
+        <p>Unsere Websites werden gehostet bei der <strong>ALL-INKL.COM — Neue Medien Münnich</strong>, Inh. René
+          Münnich, Hauptstraße 68, 02742 Friedersdorf, Deutschland. Mit dem Hosting-Anbieter besteht ein
+          Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO. Die Server stehen ausschließlich in Deutschland.</p>
 
-        <p>Beim Besuch unserer Websites werden durch den Hosting-Anbieter automatisch Informationen in sogenannten Server-Log-Dateien erfasst, die dein Browser übermittelt. Dies umfasst:</p>
+        <p>Beim Besuch unserer Websites werden durch den Hosting-Anbieter automatisch Informationen in sogenannten
+          Server-Log-Dateien erfasst, die dein Browser übermittelt. Dies umfasst:</p>
         <ul class="dsl">
           <li>IP-Adresse</li>
           <li>Datum und Uhrzeit der Anfrage</li>
@@ -608,17 +696,30 @@
           <li>Browsertyp und Betriebssystem</li>
           <li>Übertragene Datenmenge und HTTP-Statuscode</li>
         </ul>
-        <p style="margin-top: var(--space-3);">Diese Daten werden ausschließlich zur technischen Bereitstellung, zur Sicherstellung der Stabilität und zur Abwehr von Angriffen verwendet und nicht mit anderen Datenquellen zusammengeführt. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am sicheren Betrieb der Website). Speicherdauer: in der Regel 7 Tage, in Ausnahmefällen (z. B. bei Sicherheitsvorfällen) länger, bis der Vorfall abschließend aufgeklärt ist.</p>
+        <p style="margin-top: var(--space-3);">Diese Daten werden ausschließlich zur technischen Bereitstellung, zur
+          Sicherstellung der Stabilität und zur Abwehr von Angriffen verwendet und nicht mit anderen Datenquellen
+          zusammengeführt. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am sicheren Betrieb der
+          Website). Speicherdauer: in der Regel 7 Tage, in Ausnahmefällen (z. B. bei Sicherheitsvorfällen) länger, bis
+          der Vorfall abschließend aufgeklärt ist.</p>
 
         <div class="sub">
           <p class="sub__title">Verschlüsselte Übertragung</p>
-          <p>Unsere Websites nutzen TLS/SSL-Verschlüsselung, erkennbar am Schloss-Symbol in der Adresszeile deines Browsers. Dadurch werden deine Eingaben — etwa bei Kontaktformularen oder der Newsletter-Anmeldung — vor dem Mitlesen durch Dritte geschützt.</p>
+          <p>Unsere Websites nutzen TLS/SSL-Verschlüsselung, erkennbar am Schloss-Symbol in der Adresszeile deines
+            Browsers. Dadurch werden deine Eingaben — etwa bei Kontaktformularen oder der Newsletter-Anmeldung — vor dem
+            Mitlesen durch Dritte geschützt.</p>
         </div>
 
         <div class="sub">
           <p class="sub__title">Kontaktformular (mantd.org)</p>
-          <p>Das Kontaktformular auf mantd.org verarbeitet die von dir eingegebenen Daten (Name, E-Mail-Adresse, Nachricht) ausschließlich zur Bearbeitung deiner Anfrage. Die Nachricht wird anschließend per E-Mail an unsere Adresse <a href="mailto:info@mantd.org">info@mantd.org</a> weitergeleitet und im E-Mail-Postfach gespeichert. Zum Schutz vor automatisierten Spam-Einträgen verwenden wir ein verstecktes Formularfeld („Honeypot"), das keine personenbezogenen Daten erhebt.</p>
-          <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahme), wenn deine Anfrage auf den Abschluss einer Zusammenarbeit zielt; ansonsten Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen). Die Daten werden gelöscht, sobald deine Anfrage abschließend bearbeitet ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen (regelmäßig spätestens nach 6 Monaten).</p>
+          <p>Das Kontaktformular auf mantd.org verarbeitet die von dir eingegebenen Daten (Name, E-Mail-Adresse,
+            Nachricht) ausschließlich zur Bearbeitung deiner Anfrage. Die Nachricht wird anschließend per E-Mail an
+            unsere Adresse <a href="mailto:info@mantd.org">info@mantd.org</a> weitergeleitet und im E-Mail-Postfach
+            gespeichert. Zum Schutz vor automatisierten Spam-Einträgen verwenden wir ein verstecktes Formularfeld
+            („Honeypot"), das keine personenbezogenen Daten erhebt.</p>
+          <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahme), wenn deine Anfrage auf den
+            Abschluss einer Zusammenarbeit zielt; ansonsten Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der
+            Beantwortung von Anfragen). Die Daten werden gelöscht, sobald deine Anfrage abschließend bearbeitet ist und
+            keine gesetzlichen Aufbewahrungspflichten entgegenstehen (regelmäßig spätestens nach 6 Monaten).</p>
         </div>
       </div>
     </div>
@@ -628,8 +729,10 @@
       <p class="block__label">05</p>
       <h2 class="block__title">KONTAKT PER E-MAIL</h2>
       <div class="block__body">
-        <p>Wenn du uns per E-Mail kontaktierst, werden die übermittelten Daten (E-Mail-Adresse, Name, Inhalt) zur Bearbeitung deiner Anfrage gespeichert. Diese Daten geben wir nicht ohne deine Einwilligung weiter.</p>
-        <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Kommunikation). Speicherdauer: bis zur abschließenden Bearbeitung deiner Anfrage, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
+        <p>Wenn du uns per E-Mail kontaktierst, werden die übermittelten Daten (E-Mail-Adresse, Name, Inhalt) zur
+          Bearbeitung deiner Anfrage gespeichert. Diese Daten geben wir nicht ohne deine Einwilligung weiter.</p>
+        <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Kommunikation). Speicherdauer: bis
+          zur abschließenden Bearbeitung deiner Anfrage, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
       </div>
     </div>
 
@@ -638,28 +741,45 @@
       <p class="block__label">06</p>
       <h2 class="block__title">NEWSLETTER</h2>
       <div class="block__body">
-        <p>Wenn du dich für unseren MANTD Newsletter anmeldest, verarbeiten wir deine E-Mail-Adresse und – sofern angegeben – deinen Namen, um dir regelmäßige Informationen über unsere Arbeit und Neuigkeiten zuzusenden.</p>
-        <p>Die Anmeldung erfolgt im Double-Opt-in-Verfahren: Du erhältst nach der Anmeldung eine Bestätigungs-E-Mail mit einem Bestätigungslink, den du aktiv anklicken musst. Erst dann nehmen wir dich in den Verteiler auf. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).</p>
+        <p>Wenn du dich für unseren MANTD Newsletter anmeldest, verarbeiten wir deine E-Mail-Adresse und – sofern
+          angegeben – deinen Namen, um dir regelmäßige Informationen über unsere Arbeit und Neuigkeiten zuzusenden.</p>
+        <p>Die Anmeldung erfolgt im Double-Opt-in-Verfahren: Du erhältst nach der Anmeldung eine Bestätigungs-E-Mail mit
+          einem Bestätigungslink, den du aktiv anklicken musst. Erst dann nehmen wir dich in den Verteiler auf.
+          Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).</p>
 
         <div class="sub">
           <p class="sub__title">Versand über Brevo</p>
-          <p>Für den Versand unseres Newsletters nutzen wir den Dienst <strong>Brevo</strong> (Sendinblue SAS, 106 boulevard Haussmann, 75008 Paris, Frankreich). Deine E-Mail-Adresse und, sofern angegeben, dein Name werden an Brevo übermittelt und dort auf Servern innerhalb der Europäischen Union gespeichert. Brevo verarbeitet deine Daten ausschließlich in unserem Auftrag auf Grundlage eines Auftragsverarbeitungsvertrages gemäß Art. 28 DSGVO.</p>
-          <p>Weitere Informationen findest du in der Datenschutzerklärung von Brevo: <a href="https://www.brevo.com/de/legal/privacypolicy/" target="_blank" rel="noopener noreferrer">brevo.com/de/legal/privacypolicy</a>.</p>
+          <p>Für den Versand unseres Newsletters nutzen wir den Dienst <strong>Brevo</strong> (Sendinblue SAS, 106
+            boulevard Haussmann, 75008 Paris, Frankreich). Deine E-Mail-Adresse und, sofern angegeben, dein Name werden
+            an Brevo übermittelt und dort auf Servern innerhalb der Europäischen Union gespeichert. Brevo verarbeitet
+            deine Daten ausschließlich in unserem Auftrag auf Grundlage eines Auftragsverarbeitungsvertrages gemäß Art.
+            28 DSGVO.</p>
+          <p>Weitere Informationen findest du in der Datenschutzerklärung von Brevo: <a
+              href="https://www.brevo.com/de/legal/privacypolicy/" target="_blank"
+              rel="noopener noreferrer">brevo.com/de/legal/privacypolicy</a>.</p>
         </div>
 
         <div class="sub">
           <p class="sub__title">Einwilligungs-Nachweis</p>
-          <p>Bei der Anmeldung und bei der Bestätigung protokollieren wir deine IP-Adresse und den jeweiligen Zeitpunkt, um deine Einwilligung nach Art. 7 Abs. 1 DSGVO nachweisen zu können. Diese Protokolldaten werden für die Dauer deines Newsletter-Bezugs aufbewahrt und spätestens drei Jahre nach Widerruf der Einwilligung gelöscht.</p>
+          <p>Bei der Anmeldung und bei der Bestätigung protokollieren wir deine IP-Adresse und den jeweiligen Zeitpunkt,
+            um deine Einwilligung nach Art. 7 Abs. 1 DSGVO nachweisen zu können. Diese Protokolldaten werden für die
+            Dauer deines Newsletter-Bezugs aufbewahrt und spätestens drei Jahre nach Widerruf der Einwilligung gelöscht.
+          </p>
         </div>
 
         <div class="sub">
           <p class="sub__title">Mindestalter</p>
-          <p>Unser Newsletter richtet sich an Personen ab 16 Jahren. Wenn du jünger bist, benötigst du für die Anmeldung die Zustimmung deiner Erziehungsberechtigten (Art. 8 DSGVO).</p>
+          <p>Unser Newsletter richtet sich an Personen ab 16 Jahren. Wenn du jünger bist, benötigst du für die Anmeldung
+            die Zustimmung deiner Erziehungsberechtigten (Art. 8 DSGVO).</p>
         </div>
 
         <div class="sub">
           <p class="sub__title">Abmeldung</p>
-          <p>Du kannst den Newsletter jederzeit und ohne Angabe von Gründen abbestellen. Jede Newsletter-E-Mail enthält einen Abmelde-Link. Alternativ genügt eine formlose E-Mail an <a href="mailto:info@mantd.org">info@mantd.org</a>. Nach der Abmeldung werden deine Daten aus dem aktiven Verteiler gelöscht; ein anonymisierter Eintrag kann zur Unterbindung erneuter unerwünschter Zusendungen in einer Sperrliste verbleiben.</p>
+          <p>Du kannst den Newsletter jederzeit und ohne Angabe von Gründen abbestellen. Jede Newsletter-E-Mail enthält
+            einen Abmelde-Link. Alternativ genügt eine formlose E-Mail an <a
+              href="mailto:info@mantd.org">info@mantd.org</a>. Nach der Abmeldung werden deine Daten aus dem aktiven
+            Verteiler gelöscht; ein anonymisierter Eintrag kann zur Unterbindung erneuter unerwünschter Zusendungen in
+            einer Sperrliste verbleiben.</p>
         </div>
       </div>
     </div>
@@ -669,34 +789,50 @@
       <p class="block__label">07</p>
       <h2 class="block__title">SOCIAL-MEDIA-AUFTRITTE</h2>
       <div class="block__body">
-        <p>Wir betreiben Auftritte auf folgenden sozialen Netzwerken: Facebook, Instagram und TikTok. Wenn du diese Plattformen besuchst oder mit unseren Inhalten interagierst, verarbeiten die jeweiligen Plattformbetreiber Daten gemäß ihren eigenen Datenschutzrichtlinien.</p>
-        <p>Wir möchten darauf hinweisen, dass wir auf die Datenverarbeitung durch diese Plattformen keinen Einfluss haben. Wir empfehlen, die Datenschutzhinweise der jeweiligen Anbieter zu lesen:</p>
+        <p>Wir betreiben Auftritte auf folgenden sozialen Netzwerken: Facebook, Instagram und TikTok. Wenn du diese
+          Plattformen besuchst oder mit unseren Inhalten interagierst, verarbeiten die jeweiligen Plattformbetreiber
+          Daten gemäß ihren eigenen Datenschutzrichtlinien.</p>
+        <p>Wir möchten darauf hinweisen, dass wir auf die Datenverarbeitung durch diese Plattformen keinen Einfluss
+          haben. Wir empfehlen, die Datenschutzhinweise der jeweiligen Anbieter zu lesen:</p>
         <table class="dsl-table">
           <tbody>
             <tr>
               <td>Facebook<span class="dsl-table__ref">Meta Platforms</span></td>
-              <td><a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">facebook.com/privacy/policy</a></td>
+              <td><a href="https://www.facebook.com/privacy/policy/" target="_blank"
+                  rel="noopener noreferrer">facebook.com/privacy/policy</a></td>
             </tr>
             <tr>
               <td>Instagram<span class="dsl-table__ref">Meta Platforms</span></td>
-              <td><a href="https://privacycenter.instagram.com/policy" target="_blank" rel="noopener noreferrer">privacycenter.instagram.com/policy</a></td>
+              <td><a href="https://privacycenter.instagram.com/policy" target="_blank"
+                  rel="noopener noreferrer">privacycenter.instagram.com/policy</a></td>
             </tr>
             <tr>
               <td>TikTok<span class="dsl-table__ref">ByteDance</span></td>
-              <td><a href="https://www.tiktok.com/legal/page/eea/privacy-policy/de-DE" target="_blank" rel="noopener noreferrer">tiktok.com/legal/privacy-policy</a></td>
+              <td><a href="https://www.tiktok.com/legal/page/eea/privacy-policy/de-DE" target="_blank"
+                  rel="noopener noreferrer">tiktok.com/legal/privacy-policy</a></td>
             </tr>
           </tbody>
         </table>
 
         <div class="sub">
           <p class="sub__title">Gemeinsame Verantwortlichkeit (Facebook &amp; Instagram)</p>
-          <p>Beim Betrieb von Facebook- und Instagram-Seiten besteht mit Meta Platforms Ireland Limited (4 Grand Canal Square, Dublin 2, Irland) eine gemeinsame Verantwortlichkeit gemäß Art. 26 DSGVO, insbesondere bezüglich der durch Meta bereitgestellten Seitenstatistiken („Page Insights"). Rechtsgrundlage für unsere Teilverantwortung ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der öffentlichen Darstellung unserer Arbeit und an statistischen Auswertungen zur Reichweite). Weiterführende Informationen findest du in der Facebook-Seiten-Insights-Ergänzung: <a href="https://www.facebook.com/legal/terms/page_controller_addendum" target="_blank" rel="noopener noreferrer">facebook.com/legal/terms/page_controller_addendum</a>.</p>
-          <p>Meta ist nach dem EU-US Data Privacy Framework zertifiziert; für Datenübermittlungen in die USA besteht damit ein Angemessenheitsbeschluss gemäß Art. 45 DSGVO.</p>
+          <p>Beim Betrieb von Facebook- und Instagram-Seiten besteht mit Meta Platforms Ireland Limited (4 Grand Canal
+            Square, Dublin 2, Irland) eine gemeinsame Verantwortlichkeit gemäß Art. 26 DSGVO, insbesondere bezüglich der
+            durch Meta bereitgestellten Seitenstatistiken („Page Insights"). Rechtsgrundlage für unsere
+            Teilverantwortung ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der öffentlichen Darstellung
+            unserer Arbeit und an statistischen Auswertungen zur Reichweite). Weiterführende Informationen findest du in
+            der Facebook-Seiten-Insights-Ergänzung: <a
+              href="https://www.facebook.com/legal/terms/page_controller_addendum" target="_blank"
+              rel="noopener noreferrer">facebook.com/legal/terms/page_controller_addendum</a>.</p>
+          <p>Meta ist nach dem EU-US Data Privacy Framework zertifiziert; für Datenübermittlungen in die USA besteht
+            damit ein Angemessenheitsbeschluss gemäß Art. 45 DSGVO.</p>
         </div>
 
         <div class="sub">
           <p class="sub__title">Kommentare, Nachrichten &amp; Interaktionen</p>
-          <p>Wenn du uns über Social Media kontaktierst oder öffentlich kommentierst, sind die dabei übermittelten Daten für die Öffentlichkeit oder für uns sichtbar. Wir verwenden diese Daten ausschließlich zur Kommunikation und nicht für Werbezwecke. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
+          <p>Wenn du uns über Social Media kontaktierst oder öffentlich kommentierst, sind die dabei übermittelten Daten
+            für die Öffentlichkeit oder für uns sichtbar. Wir verwenden diese Daten ausschließlich zur Kommunikation und
+            nicht für Werbezwecke. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
         </div>
       </div>
     </div>
@@ -706,20 +842,31 @@
       <p class="block__label">08</p>
       <h2 class="block__title">COOKIES &amp; LOKALER SPEICHER</h2>
       <div class="block__body">
-        <p>Unsere Websites verwenden <strong>keine Tracking-Cookies und keine Analyse-Tools</strong>. Wir setzen weder Google Analytics noch Facebook Pixel noch vergleichbare Dienste ein, die dein Verhalten über unsere Seiten hinweg verfolgen.</p>
-        <p>Es werden lediglich technisch notwendige Funktionen verwendet, die für den Betrieb der Seite erforderlich sind. Diese speichern keine personenbezogenen Daten zu Werbezwecken.</p>
+        <p>Unsere Websites verwenden <strong>keine Tracking-Cookies und keine Analyse-Tools</strong>. Wir setzen weder
+          Google Analytics noch Facebook Pixel noch vergleichbare Dienste ein, die dein Verhalten über unsere Seiten
+          hinweg verfolgen.</p>
+        <p>Es werden lediglich technisch notwendige Funktionen verwendet, die für den Betrieb der Seite erforderlich
+          sind. Diese speichern keine personenbezogenen Daten zu Werbezwecken.</p>
 
         <div class="sub">
           <p class="sub__title">Lokaler Speicher (Local Storage)</p>
-          <p>Zur Verbesserung der Nutzererfahrung legen wir kleine Datensätze im lokalen Speicher deines Browsers ab:</p>
+          <p>Zur Verbesserung der Nutzererfahrung legen wir kleine Datensätze im lokalen Speicher deines Browsers ab:
+          </p>
           <ul class="dsl">
-            <li>die von dir gewählte <strong>Sprache</strong>, damit die Seite beim nächsten Besuch in der richtigen Sprache erscheint</li>
-            <li>einen Merker, dass unser <strong>Newsletter-Popup</strong> bereits angezeigt wurde, damit es dir nicht wiederholt beim selben Besuch erscheint</li>
+            <li>die von dir gewählte <strong>Sprache</strong>, damit die Seite beim nächsten Besuch in der richtigen
+              Sprache erscheint</li>
+            <li>einen Merker, dass unser <strong>Newsletter-Popup</strong> bereits angezeigt wurde, damit es dir nicht
+              wiederholt beim selben Besuch erscheint</li>
           </ul>
-          <p style="margin-top: var(--space-3);">Es werden dabei keine personenbezogenen Daten an uns oder Dritte übermittelt. Du kannst den lokalen Speicher in den Einstellungen deines Browsers jederzeit löschen. Rechtsgrundlage: § 25 Abs. 2 Nr. 2 TTDSG (technische Erforderlichkeit für eine vom Nutzer ausdrücklich gewünschte Funktion) bzw. Art. 6 Abs. 1 lit. f DSGVO.</p>
+          <p style="margin-top: var(--space-3);">Es werden dabei keine personenbezogenen Daten an uns oder Dritte
+            übermittelt. Du kannst den lokalen Speicher in den Einstellungen deines Browsers jederzeit löschen.
+            Rechtsgrundlage: § 25 Abs. 2 Nr. 2 TTDSG (technische Erforderlichkeit für eine vom Nutzer ausdrücklich
+            gewünschte Funktion) bzw. Art. 6 Abs. 1 lit. f DSGVO.</p>
         </div>
 
-        <p style="margin-top: var(--space-6);">Du kannst Cookies und den lokalen Speicher in den Einstellungen deines Browsers jederzeit deaktivieren oder löschen. Bitte beachte, dass dies die Funktionalität der Website einschränken kann.</p>
+        <p style="margin-top: var(--space-6);">Du kannst Cookies und den lokalen Speicher in den Einstellungen deines
+          Browsers jederzeit deaktivieren oder löschen. Bitte beachte, dass dies die Funktionalität der Website
+          einschränken kann.</p>
       </div>
     </div>
 
@@ -728,26 +875,39 @@
       <p class="block__label">09</p>
       <h2 class="block__title">SCHRIFTEN, SKRIPTE &amp; EINBETTUNGEN</h2>
       <div class="block__body">
-        <p>Uns ist es wichtig, beim Aufruf unserer Seiten möglichst keine Daten an Dritte zu übermitteln. Aus diesem Grund binden wir Schriftarten, Animationsbibliotheken und Bilder, wo immer möglich, lokal von unserem eigenen Server ein. Eine Verbindung zu Google- oder Cloudflare-Servern findet dadurch <strong>nicht</strong> statt.</p>
+        <p>Uns ist es wichtig, beim Aufruf unserer Seiten möglichst keine Daten an Dritte zu übermitteln. Aus diesem
+          Grund binden wir Schriftarten, Animationsbibliotheken und Bilder, wo immer möglich, lokal von unserem eigenen
+          Server ein. Eine Verbindung zu Google- oder Cloudflare-Servern findet dadurch <strong>nicht</strong> statt.
+        </p>
 
         <div class="sub">
           <p class="sub__title">Schriftarten (Google Fonts, lokal eingebunden)</p>
-          <p>Unsere Websites verwenden Schriftarten aus dem Google-Fonts-Projekt (u. a. Bebas Neue, DM Sans, Cormorant Garamond, Manrope, Plus Jakarta Sans). Diese Schriften werden <strong>vollständig lokal</strong> von unserem Server ausgeliefert. Eine Verbindung zu Servern von Google LLC oder fonts.gstatic.com wird beim Besuch unserer Seiten nicht aufgebaut.</p>
+          <p>Unsere Websites verwenden Schriftarten aus dem Google-Fonts-Projekt (u. a. Bebas Neue, DM Sans, Cormorant
+            Garamond, Manrope, Plus Jakarta Sans). Diese Schriften werden <strong>vollständig lokal</strong> von unserem
+            Server ausgeliefert. Eine Verbindung zu Servern von Google LLC oder fonts.gstatic.com wird beim Besuch
+            unserer Seiten nicht aufgebaut.</p>
         </div>
 
         <div class="sub">
           <p class="sub__title">Animations- und Skriptbibliotheken</p>
-          <p>Für visuelle Effekte nutzen wir JavaScript-Bibliotheken wie GSAP (GreenSock) und AOS. Diese werden ebenfalls lokal von unserem Server ausgeliefert; externe CDN-Anbieter wie Cloudflare oder unpkg werden beim Seitenaufruf nicht kontaktiert.</p>
+          <p>Für visuelle Effekte nutzen wir JavaScript-Bibliotheken wie GSAP (GreenSock) und AOS. Diese werden
+            ebenfalls lokal von unserem Server ausgeliefert; externe CDN-Anbieter wie Cloudflare oder unpkg werden beim
+            Seitenaufruf nicht kontaktiert.</p>
         </div>
 
         <div class="sub">
           <p class="sub__title">Bildmaterial</p>
-          <p>Alle Bilder auf unseren Websites werden von unserem eigenen Server ausgeliefert. Sofern einzelne Bildmotive ursprünglich aus öffentlichen Bildarchiven (z. B. Unsplash) stammen, haben wir sie heruntergeladen und lokal integriert. Ein Aufruf externer Bilddatenbanken beim Besuch unserer Seiten findet nicht statt.</p>
+          <p>Alle Bilder auf unseren Websites werden von unserem eigenen Server ausgeliefert. Sofern einzelne Bildmotive
+            ursprünglich aus öffentlichen Bildarchiven (z. B. Unsplash) stammen, haben wir sie heruntergeladen und lokal
+            integriert. Ein Aufruf externer Bilddatenbanken beim Besuch unserer Seiten findet nicht statt.</p>
         </div>
 
         <div class="sub">
           <p class="sub__title">Karten, Videos &amp; sonstige Einbettungen</p>
-          <p>Aktuell binden wir keine externen Karten (z. B. Google Maps) und keine externen Videos (z. B. von YouTube oder Vimeo) in unsere Websites ein. Sollten wir zukünftig solche Inhalte einbetten, weisen wir an entsprechender Stelle gesondert darauf hin und holen deine Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO ein.</p>
+          <p>Aktuell binden wir keine externen Karten (z. B. Google Maps) und keine externen Videos (z. B. von YouTube
+            oder Vimeo) in unsere Websites ein. Sollten wir zukünftig solche Inhalte einbetten, weisen wir an
+            entsprechender Stelle gesondert darauf hin und holen deine Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO ein.
+          </p>
         </div>
       </div>
     </div>
@@ -770,7 +930,8 @@
             </tr>
             <tr>
               <td>Löschung<span class="dsl-table__ref">Art. 17 DSGVO</span></td>
-              <td>Du kannst die Löschung deiner Daten verlangen, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</td>
+              <td>Du kannst die Löschung deiner Daten verlangen, sofern keine gesetzlichen Aufbewahrungspflichten
+                entgegenstehen.</td>
             </tr>
             <tr>
               <td>Einschränkung<span class="dsl-table__ref">Art. 18 DSGVO</span></td>
@@ -782,7 +943,8 @@
             </tr>
             <tr>
               <td>Widerspruch<span class="dsl-table__ref">Art. 21 DSGVO</span></td>
-              <td>Du kannst der Verarbeitung deiner Daten auf Basis berechtigter Interessen jederzeit widersprechen.</td>
+              <td>Du kannst der Verarbeitung deiner Daten auf Basis berechtigter Interessen jederzeit widersprechen.
+              </td>
             </tr>
             <tr>
               <td>Widerruf<span class="dsl-table__ref">Art. 7 Abs. 3 DSGVO</span></td>
@@ -790,10 +952,14 @@
             </tr>
           </tbody>
         </table>
-        <p style="margin-top: var(--space-4);">Zur Ausübung deiner Rechte wende dich an: <a href="mailto:info@mantd.org">info@mantd.org</a></p>
+        <p style="margin-top: var(--space-4);">Zur Ausübung deiner Rechte wende dich an: <a
+            href="mailto:info@mantd.org">info@mantd.org</a></p>
 
         <div class="notice">
-          <p><strong>Beschwerderecht:</strong> Du hast das Recht, dich jederzeit bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Die zuständige Aufsichtsbehörde für MANTD ist der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Rheinland-Pfalz (LfDI RLP): <a href="https://www.datenschutz.rlp.de" target="_blank" rel="noopener noreferrer">www.datenschutz.rlp.de</a></p>
+          <p><strong>Beschwerderecht:</strong> Du hast das Recht, dich jederzeit bei einer Datenschutz-Aufsichtsbehörde
+            zu beschweren. Die zuständige Aufsichtsbehörde für MANTD ist der Landesbeauftragte für den Datenschutz und
+            die Informationsfreiheit Rheinland-Pfalz (LfDI RLP): <a href="https://www.datenschutz.rlp.de"
+              target="_blank" rel="noopener noreferrer">www.datenschutz.rlp.de</a></p>
         </div>
       </div>
     </div>
@@ -803,8 +969,10 @@
       <p class="block__label">11</p>
       <h2 class="block__title">ÄNDERUNGEN</h2>
       <div class="block__body">
-        <p>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, um sie stets den aktuellen rechtlichen Anforderungen entsprechend zu halten oder um Änderungen unserer Dienste zu berücksichtigen.</p>
-        <p>Bei wesentlichen Änderungen informieren wir dich über unsere Websites oder – sofern du unseren Newsletter abonniert hast – per E-Mail.</p>
+        <p>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, um sie stets den aktuellen
+          rechtlichen Anforderungen entsprechend zu halten oder um Änderungen unserer Dienste zu berücksichtigen.</p>
+        <p>Bei wesentlichen Änderungen informieren wir dich über unsere Websites oder – sofern du unseren Newsletter
+          abonniert hast – per E-Mail.</p>
         <p><strong>Stand:</strong> April 2026</p>
       </div>
     </div>
@@ -812,9 +980,11 @@
   </main>
 
   <footer class="site-footer">
-    <p>© 2026 MANTD – Internationales Missionswerk &nbsp;·&nbsp; <a href="impressum.html" style="color: inherit; text-decoration: none;">Impressum</a></p>
+    <p>© 2026 MANTD – Internationales Missionswerk &nbsp;·&nbsp; <a href="impressum.html"
+        style="color: inherit; text-decoration: none;">Impressum</a></p>
     <p class="footer-tagline">FÜR DAS EVANGELIUM IN EUROPA</p>
   </footer>
 
 </body>
+
 </html>

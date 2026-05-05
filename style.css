@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 :root {
@@ -176,13 +177,17 @@ button {
   transition: width 0.3s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-.nav__links a:hover {
-  color: #ffffff;
-  text-shadow: 0 0 12px rgba(240, 237, 232, 0.3);
+@media (hover: hover) {
+  .nav__links a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(240, 237, 232, 0.3);
+  }
 }
 
-.nav__links a:hover::after {
-  width: 100%;
+@media (hover: hover) {
+  .nav__links a:hover::after {
+    width: 100%;
+  }
 }
 
 .nav__cta {
@@ -198,10 +203,12 @@ button {
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s, background 0.3s;
 }
 
-.nav__cta:hover {
-  transform: scale(1.05) translateY(-1px);
-  background: #ff7a4a;
-  box-shadow: 0 6px 24px rgba(232, 98, 44, 0.55);
+@media (hover: hover) {
+  .nav__cta:hover {
+    transform: scale(1.05) translateY(-1px);
+    background: #ff7a4a;
+    box-shadow: 0 6px 24px rgba(232, 98, 44, 0.55);
+  }
 }
 
 .nav__burger {
@@ -248,8 +255,10 @@ button {
   transition: color 0.3s;
 }
 
-.mobile-menu a:hover {
-  color: var(--color-accent);
+@media (hover: hover) {
+  .mobile-menu a:hover {
+    color: var(--color-accent);
+  }
 }
 
 @media (max-width: 900px) {
@@ -410,12 +419,16 @@ button {
   transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-.btn:hover::before {
-  transform: translateX(0);
+@media (hover: hover) {
+  .btn:hover::before {
+    transform: translateX(0);
+  }
 }
 
-.btn:hover {
-  transform: translateY(-2px);
+@media (hover: hover) {
+  .btn:hover {
+    transform: translateY(-2px);
+  }
 }
 
 .btn--primary {
@@ -427,8 +440,10 @@ button {
   background: #ff7a4a;
 }
 
-.btn--primary:hover {
-  box-shadow: 0 6px 30px rgba(232, 98, 44, 0.4);
+@media (hover: hover) {
+  .btn--primary:hover {
+    box-shadow: 0 6px 30px rgba(232, 98, 44, 0.4);
+  }
 }
 
 .btn--outline {
@@ -451,8 +466,10 @@ button {
   transition: transform 0.3s;
 }
 
-.btn--ghost:hover .arrow {
-  transform: translateX(4px);
+@media (hover: hover) {
+  .btn--ghost:hover .arrow {
+    transform: translateX(4px);
+  }
 }
 
 /* ========== MARQUEE / TICKER ========== */
@@ -490,8 +507,10 @@ button {
   filter: brightness(0) invert(1);
 }
 
-.ticker__item:hover {
-  opacity: 1;
+@media (hover: hover) {
+  .ticker__item:hover {
+    opacity: 1;
+  }
 }
 
 .ticker__item img {
@@ -562,9 +581,11 @@ button {
   transition: filter 0.6s, transform 0.6s;
 }
 
-.vision__image:hover img {
-  filter: grayscale(0%);
-  transform: scale(1.03);
+@media (hover: hover) {
+  .vision__image:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+  }
 }
 
 @media (max-width: 768px) {
@@ -703,11 +724,17 @@ button {
   cursor: pointer;
 }
 
-.werke__tab.active,
-.werke__tab:hover {
+.werke__tab.active {
   background: var(--color-accent);
   color: var(--color-base);
   border-color: var(--color-accent);
+}
+@media (hover: hover) {
+  .werke__tab:hover {
+    background: var(--color-accent);
+    color: var(--color-base);
+    border-color: var(--color-accent);
+  }
 }
 
 .werke__panel {
@@ -738,8 +765,10 @@ button {
   transition: transform 0.6s;
 }
 
-.werke__card:hover .werke__card-image img {
-  transform: scale(1.04);
+@media (hover: hover) {
+  .werke__card:hover .werke__card-image img {
+    transform: scale(1.04);
+  }
 }
 
 .werke__card-title {
@@ -794,9 +823,11 @@ button {
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s;
 }
 
-.feature-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(232, 98, 44, 0.3);
+@media (hover: hover) {
+  .feature-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(232, 98, 44, 0.3);
+  }
 }
 
 .feature-card__icon {
@@ -909,8 +940,10 @@ button {
   transition: transform 0.6s;
 }
 
-.team__image:hover img {
-  transform: scale(1.03);
+@media (hover: hover) {
+  .team__image:hover img {
+    transform: scale(1.03);
+  }
 }
 
 .team__name {
@@ -1148,8 +1181,10 @@ button {
   transition: color 0.3s;
 }
 
-.faq__question:hover {
-  color: var(--color-accent);
+@media (hover: hover) {
+  .faq__question:hover {
+    color: var(--color-accent);
+  }
 }
 
 .faq__icon {
@@ -1245,8 +1280,10 @@ button {
   transition: color 0.3s;
 }
 
-.footer__links a:hover {
-  color: var(--color-text);
+@media (hover: hover) {
+  .footer__links a:hover {
+    color: var(--color-text);
+  }
 }
 
 .footer__copy {
@@ -1294,9 +1331,11 @@ button {
   white-space: nowrap;
 }
 
-.lang-btn:hover {
-  color: var(--color-text);
-  background: rgba(240, 237, 232, 0.08);
+@media (hover: hover) {
+  .lang-btn:hover {
+    color: var(--color-text);
+    background: rgba(240, 237, 232, 0.08);
+  }
 }
 
 .lang-btn.active {
@@ -1435,8 +1474,10 @@ button {
   z-index: 10;
 }
 
-.newsletter-close:hover {
-  color: var(--color-accent);
+@media (hover: hover) {
+  .newsletter-close:hover {
+    color: var(--color-accent);
+  }
 }
 
 .newsletter-content {
@@ -1499,4 +1540,11 @@ button {
   color: var(--color-accent);
   font-weight: 500;
   margin-top: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  /* Prevent iOS auto-zoom on form inputs */
+  input, textarea, select {
+    font-size: 16px !important;
+  }
 }

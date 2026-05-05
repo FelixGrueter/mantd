@@ -648,8 +648,8 @@
     // Initial state: 50% smaller
     gsap.set('.hero__center-logo', { scale: 0.2, opacity: 0 });
 
-    // Fade in on load
-    gsap.to('.hero__center-logo', { opacity: 1, duration: 1.5, ease: 'power3.out' });
+    // Fade in on load (hier auf 0.5 gesetzt für 50% Transparenz)
+    gsap.to('.hero__center-logo', { opacity: 0.5, duration: 1.5, ease: 'power3.out' });
     gsap.from('.scroll-indicator', { opacity: 0, duration: 1, delay: 1.5 });
 
     // Scroll to scale up
@@ -664,7 +664,9 @@
       }
     });
 
-    heroTl.to('.hero__center-logo', { scale: 1, ease: 'none' }, 0)
+    // opacity: 1 = Volle Deckkraft (0% Transparenz) beim Scrollen
+    // backgroundColor: 'rgba(0,0,0, 0.6)' = Hier den Wert 0.6 anpassen für die Dunkelheit des Overlays
+    heroTl.to('.hero__center-logo', { scale: 1, opacity: 1, ease: 'none' }, 0)
           .to('.hero__overlay', { backgroundColor: 'rgba(0, 0, 0, 0.6)', ease: 'none' }, 0);
 
     gsap.from('.hero__title', { y: 60, opacity: 0, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: '.hero-content-section', start: 'top 60%' } });

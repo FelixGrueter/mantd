@@ -1233,7 +1233,9 @@ button {
 
 .footer__links {
   display: flex;
-  gap: var(--space-6);
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4) var(--space-6);
   list-style: none;
 }
 
@@ -1253,6 +1255,14 @@ button {
   width: 100%;
   text-align: center;
   margin-top: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .footer__inner {
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-6);
+  }
 }
 
 /* ========== LANGUAGE SWITCHER ========== */

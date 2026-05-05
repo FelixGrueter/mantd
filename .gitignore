@@ -6,3 +6,9 @@ node_modules/
 .tmp/
 .vscode/
 deploy-dev.sh
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example

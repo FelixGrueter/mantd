@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (empty($_SESSION['form_time'])) {
+    $_SESSION['form_time'] = time();
+}
+?>
 <!DOCTYPE html>
 <html lang="de">
 

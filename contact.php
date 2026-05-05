@@ -146,29 +146,46 @@ if ($name === '' || $email === '' || $message === '') {
 
 
 /* --------------------------------------------------------------------------
- * 6. Mail-Vorbereitung
+ * 6. Mail-Vorbereitung (mit HTML & Text Templates)
  *
  * - Fester Absender (Domain-eigen!) → bessere Zustellbarkeit
  * - Reply-To = Benutzer-Mail
  * - UTF-8-korrektes Encoding
+ * - Multipart für saubere Text- und HTML-Ansicht
  * -------------------------------------------------------------------------- */
 $to = 'info@mantd.org';
 $subject = "MANTD Kontakt: $name";
-
-$body = "Du hast eine neue Nachricht über das MANTD Kontaktformular erhalten:\n\n";
-$body .= "Name: $name\n";
-$body .= "E-Mail: $email\n\n";
-$body .= "Nachricht:\n$message\n";
-
 $fromEmail = 'noreply@mantd.org';
+
+// Templates laden (Variablen $name, $email, $message sind hier verfügbar)
+ob_start();
+require __DIR__ . '/mail-templates/contact.txt.php';
+$textMessage = ob_get_clean();
+
+ob_start();
+require __DIR__ . '/mail-templates/contact.html.php';
+$htmlMessage = ob_get_clean();
+
+// Boundary für Multipart-E-Mail erstellen
+$boundary = md5(uniqid((string)time(), true));
 
 $headers = "From: MANTD Webseite <$fromEmail>\r\n";
 $headers .= "Reply-To: $email\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-$headers .= "X-Mailer: PHP/" . phpversion();
-
 $headers .= "MIME-Version: 1.0\r\n";
+$headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 $headers .= "X-Entity-Ref-ID: " . uniqid('mantd-', true) . "\r\n";
+$headers .= "Content-Type: multipart/alternative; boundary=\"$boundary\"\r\n";
+
+$body = "--$boundary\r\n";
+$body .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$body .= "Content-Transfer-Encoding: 8bit\r\n\r\n";
+$body .= $textMessage . "\r\n\r\n";
+
+$body .= "--$boundary\r\n";
+$body .= "Content-Type: text/html; charset=UTF-8\r\n";
+$body .= "Content-Transfer-Encoding: 8bit\r\n\r\n";
+$body .= $htmlMessage . "\r\n\r\n";
+$body .= "--$boundary--";
 
 /* --------------------------------------------------------------------------
  * 7. Mail-Versand

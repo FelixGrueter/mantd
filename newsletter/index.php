@@ -11,8 +11,8 @@ session_start();
   <meta name="description"
     content="Melde dich für den MANTD-Newsletter an und bleibe auf dem Laufenden über Mission Trips, Visionen und Gottes Wirken.">
   <meta name="robots" content="noindex, nofollow">
-  <link rel="stylesheet" href="assets/fonts.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../assets/fonts.css">
+  <link rel="stylesheet" href="../style.css">
   <style>
     /* ===== PAGE-SPECIFIC OVERRIDES ===== */
 
@@ -387,8 +387,8 @@ session_start();
 
   <!-- ======= MINIMAL HEADER ======= -->
   <header class="nl-header" role="banner">
-    <a href="index.php" aria-label="MANTD – Startseite">
-      <img src="assets/images/mantd-logo-weiss.png" alt="MANTD Logo" class="nl-header__logo-img">
+    <a href="../index.php" aria-label="MANTD – Startseite">
+      <img src="../assets/images/mantd-logo-weiss.png" alt="MANTD Logo" class="nl-header__logo-img">
     </a>
   </header>
 
@@ -487,11 +487,11 @@ session_start();
   <!-- ======= FOOTER ======= -->
   <footer class="footer" role="contentinfo">
     <div class="container footer__inner">
-      <a href="index.php" class="footer__logo">MANTD</a>
+      <a href="../index.php" class="footer__logo">MANTD</a>
       <ul class="footer__links footer__links--minimal">
-        <li><a href="datenschutz.html">Datenschutz</a></li>
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="index.php">Zurück zur Startseite</a></li>
+        <li><a href="../datenschutz.html">Datenschutz</a></li>
+        <li><a href="../impressum.html">Impressum</a></li>
+        <li><a href="../index.php">Zurück zur Startseite</a></li>
       </ul>
       <p class="footer__copy">&copy; 2026 MANTD – Make All Nations To Disciples. Mt. 28:19</p>
     </div>
@@ -547,7 +547,7 @@ session_start();
         const formData = new FormData();
         formData.append('email', email);
 
-        const response = await fetch('newsletter_subscribe.php', {
+        const response = await fetch('../newsletter_subscribe.php', {
           method: 'POST',
           body: formData
         });
